@@ -33,8 +33,18 @@ function Home() {
         setPosition(newPositions);
 
         if (position.length === 3) {
-            const first = position[0];
-            if (position.every(match => match === first)) {
+            const one = position[0];
+            const two = position[1];
+            const three = position[2];
+            if (position.every(match => match === one)) {
+                setScore(score + 10);
+                setWinner(true);
+            }
+            if (position.every(match => match === two)) {
+                setScore(score + 10);
+                setWinner(true);
+            }
+            if (position.every(match => match === three)) {
                 setScore(score + 10);
                 setWinner(true);
             }
