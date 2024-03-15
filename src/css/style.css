@@ -44,9 +44,11 @@
     color: #888;
 }
 
-.money-t {
-    font-size: 20px;
+button.bt-spin {
+    width: 150px;
+    font-size: 25px;
+    border-radius: 15px;
     font-weight: 600;
-    color: red;
-    margin-top: 1rem;
+    color: #fff;
+    background-color: #00ffa9;
 }
