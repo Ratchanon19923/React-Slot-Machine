@@ -65,6 +65,7 @@ function Home() {
 
     console.log("position", position);
     console.log("score", score);
+    console.log("winner", winner);
 
     return (
         <div>
