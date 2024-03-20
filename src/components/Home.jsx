@@ -3,6 +3,7 @@ import '../css/style.css';
 
 function Home() {
     const [position, setPosition] = useState([]);
+    const [count, setCount] = useState(5);
     const iconHeight = 188;
     const multiplier = Math.floor(Math.random() * (4 - 1) + 1);
     const speed = iconHeight * multiplier;
@@ -33,6 +34,9 @@ function Home() {
     const handleClick = () => {
         setPosition([]);
         finishHandler();
+        if (count > 0) {
+            setCount(count - 1);
+        }
     };
 
     const finishHandler = () => {
@@ -51,11 +55,12 @@ function Home() {
                 ))}
             </div>
             <div>
+                <h2 style={{ color: 'white' }}>จำนวนครั้งที่กดได้: {count}</h2>
                 <h1 style={{ color: winner ? 'green' : 'red' }}>
                     {winner ? 'Winner!' : 'Loss'}
                 </h1>
                 <h2 style={{ color: 'white' }}>คะแนน: {score}</h2>
-                <button aria-label='Play again.' onClick={handleClick} className='bt-spin'>spin</button>
+                <button aria-label='Play again.' onClick={handleClick} disabled={count === 0} className='bt-spin'>spin</button>
             </div>
 
 
