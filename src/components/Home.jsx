@@ -3,7 +3,7 @@ import '../css/style.css';
 
 function Home() {
     const [position, setPosition] = useState([]);
-    const [count, setCount] = useState(5);
+    const [count, setCount] = useState(0);
     const iconHeight = 188;
     const multiplier = Math.floor(Math.random() * (4 - 1) + 1);
     const speed = iconHeight * multiplier;
@@ -12,7 +12,7 @@ function Home() {
 
     const positions = [-940, -188, -0, -376, -1316, -1504, -564, -752, -1128];
 
-    const scores = [5, 10, 15, 20, 25, 30, 35, 40, 45];
+    const scores = [50, 100, 150, 200, 250, 300, 350, 400, 450];
 
     useEffect(() => {
         finishHandler();
@@ -29,14 +29,20 @@ function Home() {
                 setScore(prevScore => prevScore + positionScore);
             }
         }
+        // if (count > 0) {
+        //     if (score <= 1000) {
+        //         handleClick();
+        //     }
+        // }
+
+
     }, [position]);
 
     const handleClick = () => {
         setPosition([]);
         finishHandler();
-        if (count > 0) {
-            setCount(count - 1);
-        }
+        setCount(count + 1);
+
     };
 
     const finishHandler = () => {
@@ -59,8 +65,8 @@ function Home() {
                 <h1 style={{ color: winner ? 'green' : 'red' }}>
                     {winner ? 'Winner!' : 'Loss'}
                 </h1>
-                <h2 style={{ color: 'white' }}>คะแนน: {score}</h2>
-                <button aria-label='Play again.' onClick={handleClick} disabled={count === 0} className='bt-spin'>spin</button>
+                <h2 style={{ color: 'white' }}>คะแนน: {score >= 1000 && "1000"}</h2>
+                <button aria-label='Play again.' onClick={handleClick} disabled={score >= 1000} className='bt-spin'>spin</button>
             </div>
 
 
