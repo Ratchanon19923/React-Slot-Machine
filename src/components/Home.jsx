@@ -95,7 +95,7 @@ function Home() {
     <div className="background-box-">
       <div className="session-box">
         <div className="logo-head"></div>
-        <div className="spinner-container">
+        {/* <div className="spinner-container">
           {position.map((pos, index) => (
             <div
               key={index}
@@ -103,7 +103,7 @@ function Home() {
               className="icons"
             />
           ))}
-        </div>
+        </div> */}
         <div>
           <h2 className="bg-bonus">{score}</h2>
           <div
