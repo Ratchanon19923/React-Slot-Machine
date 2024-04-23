@@ -23,9 +23,7 @@ export default function Progressbar({ value = 0 }) {
   return (
     <React.Fragment>
       <div className="progressbar">
-        <div className="progressbarfill" style={{ width: `${percent}%` }}>
-          {percent} %
-        </div>
+        <div className="progressbarfill" style={{ width: `${percent}%` }} />
       </div>
     </React.Fragment>
   );

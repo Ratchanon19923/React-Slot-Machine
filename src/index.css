@@ -38,15 +38,17 @@ h1 span {
 
 .icons {
   display: inline-block;
-  width: 128px;
-  height: 564px;
+  width: 256px;
+  height: 895px;
   overflow: hidden;
-  background: #fff url(https://andyhoffman.codes/random-assets/img/slots/sprite5.png) repeat-y;
+  background: #fff url(/src/images/icon-game.png) repeat-y;
   will-change: backgroundPosition;
   transition: 0.3s background-position ease-in-out;
   padding: 0 80px;
   transform: translateZ(0);
+  background-size: 100%;
 }
+
 
 .icons:nth-child(2) {
   margin: 0 10px;
@@ -58,14 +60,17 @@ h1 span {
 
 .spinner-container {
   overflow: hidden;
-  height: 632px;
-  padding: 2em;
+  height: 1079px;
+  padding: 5rem;
   transform: translate(-50%, -50%) scale(.62, .62);
   position: absolute;
   top: 50%;
   left: 50%;
   display: flex;
   transition: 0.3s transform;
+  background-image: url(/src/images/box-bg.png);
+  background-size: 100% 100%;
+  background-position: center;
 }
 
 .app-wrap.winner-false {
@@ -143,5 +148,31 @@ body {
   .progressbar{
     width: 330px;
     height: 24px;
+  }
+  .spinner-container {
+    overflow: hidden;
+    height: 632px;
+    padding: 2em;
+    transform: translate(-50%, -60%) scale(.62, .62);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    transition: 0.3s transform;
+    background-image: url("../src/images/box-bg.png");
+    background-size: 100% 100%;
+    background-position: center;
+  }
+
+  .icons {
+    display: inline-block;
+    width: 128px;
+    height: 564px;
+    overflow: hidden;
+    background: #fff url("../src/images/icon-game.png") repeat-y;
+    will-change: backgroundPosition;
+    transition: 0.3s background-position ease-in-out;
+    padding: 0 80px;
+    transform: translateZ(0);
   }
 }

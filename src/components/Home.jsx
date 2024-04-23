@@ -94,6 +94,7 @@ function Home() {
   return (
     <div className="background-box-">
       <div className="session-box">
+        <div className="logo-head"></div>
         <div className="spinner-container">
           {position.map((pos, index) => (
             <div
@@ -104,19 +105,13 @@ function Home() {
           ))}
         </div>
         <div>
-          <h2 style={{ color: "white" }}>จำนวนครั้งที่กดได้: {count}</h2>
-          <h1 style={{ color: winner ? "green" : "red" }}>
-            {winner ? "Winner!" : "Loss"}
-          </h1>
-          <h2 style={{ color: "white" }}>คะแนน: {score}</h2>
-          <button
+          <h2 className="bg-bonus">{score}</h2>
+          <div
             aria-label="Play again."
             onClick={handleClick}
             disabled={score >= 100}
             className="bt-spin"
-          >
-            spin
-          </button>
+          ></div>
         </div>
       </div>
     </div>

@@ -98,7 +98,31 @@ button.bt-spin {
     position: fixed;
     bottom: 10%;
 }
+h2.bg-bonus {
+    background-image: url("../src/images/bg-bonus1.png");
+    background-size: 100% 100%;
+    background-position: center;
+    width: 321px;
+    height: 167.327px;
+    padding: 6rem 1rem 1rem 6rem;
+    transform: translate(70%, -160%) scale(.62, .62);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+.bt-spin {
+    background-image: url(../src/images/bnt-spin.png);
+    background-size: 100% 100%;
+    background-position: center;
+    width: 700px;
+    height: 350px;
+    transform: translate(-50%, 50%) scale(.62, .62);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    cursor: pointer;
 
+}
 @media screen and (max-width: 600px) {
     .background-box {
         background-image: url("../src/images/bg1.png");
@@ -115,5 +139,46 @@ button.bt-spin {
         cursor: pointer;
         position: fixed;
         bottom: 10%;
+    }
+
+    h2.bg-bonus {
+        background-image: url("../src/images/bg-bonus.png");
+        width: 384px;
+        height: 162.73px;
+        padding: 6rem 1rem 1rem 6rem;
+        transform: translate(-50%, 45%) scale(.62, .62);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+    }
+
+    .bt-spin {
+        background-image: url("../src/images/bnt-spin.png");
+        background-size: 100% 100%;
+        background-position: center;
+        width: 244px;
+        height: 179px;
+        padding: 6rem 1rem 1rem 6rem;
+        transform: translate(-50%, 100%) scale(.62, .62);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+    }
+    .logo-head {
+        background-image: url(../src/images/logo2.png);
+        background-size: 100% 100%;
+        background-position: center;
+        width: 350px;
+        height: 225px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0rem;
+        transform: translate(-50%, 0%) scale(.62, .62);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 999;
+        top: 0;
     }
 }
