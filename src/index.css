@@ -1,178 +1,183 @@
 @import url('https://fonts.googleapis.com/css?family=Cairo');
 
 @keyframes spin {
-  to {
-    transform: rotate(360deg)
-  }
+    to {
+        transform: rotate(360deg)
+    }
 }
 
 body {
-  background-color: #292929;
+    background-color: #292929;
 }
 
 #repeatButton {
-  appearance: none;
-  border: none;
-  background: url(https://andyhoffman.codes/random-assets/img/slots/repeat.png) transparent 0 0 no-repeat;
-  background-size: cover;
-  width: 48px;
-  height: 48px;
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  cursor: pointer;
-  animation: 6s linear infinite spin;
+    appearance: none;
+    border: none;
+    background: url(https://andyhoffman.codes/random-assets/img/slots/repeat.png) transparent 0 0 no-repeat;
+    background-size: cover;
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    animation: 6s linear infinite spin;
 }
 
 h1 {
-  font-size: 150%;
-  font-family: 'Cairo', sans-serif;
+    font-size: 150%;
+    font-family: 'Cairo', sans-serif;
 }
 
 h1 span {
-  color: aliceblue;
-  border: 1px solid hsla(208, 100%, 97.1%, .1);
-  display: inline-block;
-  padding: 0.75rem 1rem;
+    color: aliceblue;
+    border: 1px solid hsla(208, 100%, 97.1%, .1);
+    display: inline-block;
+    padding: 0.75rem 1rem;
 }
 
 .icons {
-  display: inline-block;
-  width: 256px;
-  height: 895px;
-  overflow: hidden;
-  background: #fff url(/src/images/icon-game.png) repeat-y;
-  will-change: backgroundPosition;
-  transition: 0.3s background-position ease-in-out;
-  padding: 0 80px;
-  transform: translateZ(0);
-  background-size: 100%;
-}
-
-
-.icons:nth-child(2) {
-  margin: 0 10px;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-.spinner-container {
-  overflow: hidden;
-  height: 1079px;
-  padding: 5rem;
-  transform: translate(-50%, -50%) scale(.62, .62);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  display: flex;
-  transition: 0.3s transform;
-  background-image: url(/src/images/box-bg.png);
-  background-size: 100% 100%;
-  background-position: center;
-}
-
-.app-wrap.winner-false {
-  animation: linear 1s spin;
-}
-
-.spinner-container::after {
-  position: absolute;
-  content: '';
-  display: block;
-  height: 180px;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 30px;
-  left: 30px;
-  background: rgba(255, 0, 0, .1);
-}
-
-.gradient-fade {
-  position: absolute;
-  top: 32px;
-  right: 32px;
-  bottom: 32px;
-  left: 32px;
-  background: linear-gradient(to bottom,
-      rgba(64, 64, 64, 1) 0%,
-      rgba(64, 64, 64, 0) 7%,
-      rgba(64, 64, 64, 0) 93%,
-      rgba(64, 64, 64, 1) 100%);
-}
-
-@media screen and (max-width: 1000px) {
-  .spinner-container {
-    transform: translate(-50%, -50%) scale(.55, .55);
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .spinner-container {
-    transform: translate(-50%, -50%) scale(.4, .4);
-  }
-}
-
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #f4f4f4;
-}
-.App {
-  text-align: center;
-
-}
-
-.progressbar{
-  width: 488px;
-  height: 36px;
-  border-radius: 50px;
-  border: 1px solid #00000000;
-  text-align: center;
-  background-color: #554E85;
-  margin: auto;
-}
-.progressbarfill{
-  height: 100%;
-  border-radius: 50px;
-  background-color: #25D9F5;
-  transition:  width 0.5 ease-out;
-  color: #fff;
-}
-@media screen and (max-width: 600px) {
-  .progressbar{
-    width: 330px;
-    height: 24px;
-  }
-  .spinner-container {
-    overflow: hidden;
-    height: 632px;
-    padding: 2em;
-    transform: translate(-50%, -60%) scale(.62, .62);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    display: flex;
-    transition: 0.3s transform;
-    background-image: url("../src/images/box-bg.png");
-    background-size: 100% 100%;
-    background-position: center;
-  }
-
-  .icons {
     display: inline-block;
-    width: 128px;
-    height: 564px;
+    width: 256px;
+    height: 895px;
     overflow: hidden;
-    background: #fff url("../src/images/icon-game.png") repeat-y;
+    background: #fff url(/src/images/icon-game.png) repeat-y;
     will-change: backgroundPosition;
     transition: 0.3s background-position ease-in-out;
     padding: 0 80px;
     transform: translateZ(0);
-  }
+    background-size: 100%;
+}
+
+
+.icons:nth-child(2) {
+    margin: 0 10px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.spinner-container {
+    overflow: hidden;
+    height: 730px;
+    padding: 3rem;
+    transform: translate(-50%, -50%) scale(.62, .62);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    justify-content: space-between;
+    transition: 0.3s transform;
+    background-image: url(/src/images/box-bg.png);
+    background-size: 100% 100%;
+    background-position: center;
+}
+
+.app-wrap.winner-false {
+    animation: linear 1s spin;
+}
+
+.spinner-container::after {
+    position: absolute;
+    content: '';
+    display: block;
+    height: 180px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 30px;
+    left: 30px;
+    background: rgba(255, 0, 0, .1);
+}
+
+.gradient-fade {
+    position: absolute;
+    top: 32px;
+    right: 32px;
+    bottom: 32px;
+    left: 32px;
+    background: linear-gradient(to bottom,
+            rgba(64, 64, 64, 1) 0%,
+            rgba(64, 64, 64, 0) 7%,
+            rgba(64, 64, 64, 0) 93%,
+            rgba(64, 64, 64, 1) 100%);
+}
+
+@media screen and (max-width: 1000px) {
+    .spinner-container {
+        transform: translate(-50%, -50%) scale(.55, .55);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .spinner-container {
+        transform: translate(-50%, -50%) scale(.4, .4);
+    }
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #f4f4f4;
+}
+
+.App {
+    text-align: center;
+
+}
+
+.progressbar {
+    width: 488px;
+    height: 36px;
+    border-radius: 50px;
+    border: 1px solid #00000000;
+    text-align: center;
+    background-color: #554E85;
+    margin: auto;
+}
+
+.progressbarfill {
+    height: 100%;
+    border-radius: 50px;
+    background-color: #25D9F5;
+    transition: width 0.5 ease-out;
+    color: #fff;
+}
+
+@media screen and (max-width: 600px) {
+    .progressbar {
+        width: 330px;
+        height: 24px;
+    }
+
+    .spinner-container {
+        overflow: hidden;
+        height: 632px;
+        padding: 2em;
+        transform: translate(-50%, -60%) scale(.62, .62);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: flex;
+        transition: 0.3s transform;
+        background-image: url("../src/images/box-bg.png");
+        background-size: 100% 100%;
+        background-position: center;
+    }
+
+    .icons {
+        display: inline-block;
+        width: 128px;
+        height: 564px;
+        overflow: hidden;
+        background: #fff url("../src/images/icon-game.png") repeat-y;
+        will-change: backgroundPosition;
+        transition: 0.3s background-position ease-in-out;
+        padding: 0 80px;
+        transform: translateZ(0);
+    }
 }

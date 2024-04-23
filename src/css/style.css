@@ -5,6 +5,28 @@
     text-align: center;
 } */
 
+
+.slots {
+    width: 650px !important;
+    height: 600px !important;
+    /* border: 1px solid black; */
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+
+
+    .reel {
+        border: 1px solid black;
+        width: 200px !important;
+        height: 600px !important;
+        background-image: url(../assets/gamespin.png);
+        background-size: 100%;
+        background-repeat: repeat-y;
+        background-position: 0 0;
+        border-radius: 10px;
+    }
+}
+
 .logo {
     height: 6em;
     padding: 1.5em;
@@ -52,6 +74,7 @@ button.bt-spin {
     color: #fff;
     background-color: #25D9F5;
 }
+
 .background-box {
     background-image: url("../src/images/bg4.png");
     background-size: 100% 100%;
@@ -59,6 +82,7 @@ button.bt-spin {
     width: 100%;
     height: 100vh;
 }
+
 .background-box- {
     background-image: url("../src/images/bg5.png");
     background-size: 100% 100%;
@@ -66,11 +90,13 @@ button.bt-spin {
     width: 100%;
     height: 100vh;
 }
+
 .session-box {
     margin: 0 auto;
     padding: 2rem;
     text-align: center;
 }
+
 .background-box-load {
     background-image: url("../src/images/bg3.png");
     background-size: 100% 100%;
@@ -78,7 +104,8 @@ button.bt-spin {
     width: 100%;
     height: 100vh;
 }
-.sesion-box-top{
+
+.sesion-box-top {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -86,18 +113,20 @@ button.bt-spin {
     height: 100vh;
 }
 
-.logo-load{
+.logo-load {
     width: 258px;
     height: 78px;
     margin: 2rem auto;
 }
-.bnt-game{
+
+.bnt-game {
     width: 289px;
     height: 138px;
-    cursor:pointer;
+    cursor: pointer;
     position: fixed;
     bottom: 10%;
 }
+
 h2.bg-bonus {
     background-image: url("../src/images/bg-bonus1.png");
     background-size: 100% 100%;
@@ -110,6 +139,7 @@ h2.bg-bonus {
     top: 50%;
     left: 50%;
 }
+
 .bt-spin {
     background-image: url(../src/images/bnt-spin.png);
     background-size: 100% 100%;
@@ -123,16 +153,20 @@ h2.bg-bonus {
     cursor: pointer;
 
 }
+
 @media screen and (max-width: 600px) {
     .background-box {
         background-image: url("../src/images/bg1.png");
     }
+
     .background-box- {
         background-image: url("../src/images/bg6.png");
     }
+
     .background-box-load {
         background-image: url("../src/images/bg2.png");
     }
+
     .bnt-game {
         width: 187px;
         height: 89px;
@@ -163,6 +197,7 @@ h2.bg-bonus {
         top: 50%;
         left: 50%;
     }
+
     .logo-head {
         background-image: url(../src/images/logo2.png);
         background-size: 100% 100%;
