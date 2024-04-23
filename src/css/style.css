@@ -158,7 +158,6 @@ h2.bg-bonus {
         background-position: center;
         width: 244px;
         height: 179px;
-        padding: 6rem 1rem 1rem 6rem;
         transform: translate(-50%, 100%) scale(.62, .62);
         position: absolute;
         top: 50%;
