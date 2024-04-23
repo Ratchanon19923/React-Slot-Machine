@@ -1,21 +1,26 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "../css/style.css";
 import LoadingScreen from "./LoadingScreen";
+import imggame from "../assets/gamespin.png"
 
 function Home() {
-    const [position, setPosition] = useState([]);
-    const [count, setCount] = useState(0);
-    const iconHeight = 188;
-    const multiplier = Math.floor(Math.random() * (4 - 1) + 1);
-    const speed = iconHeight * multiplier;
-    const [winner, setWinner] = useState(false);
-    const [score, setScore] = useState(0);
-    const positions = [-940, -188, -0, -376, -1316, -1504, -564, -752, -1128];
-    const scores = [5, 10, 15, 20, 25, 30, 35, 40, 45];
+
     const [isLoading, setIsLoading] = useState(true);
     const [progress, setProgress] = useState(0);
+    // Mapping of indexes to icons
+    // const iconMap = ["กบเหลือง", "มิททราย", "เเดง", "เขียว", "อุกาบาต", "กบเขียว", "จรวด", "lsm", "ยาน"]
+    const iconMap = ["banana", "seven", "cherry", "plum", "orange", "bell", "bar", "lemon", "melon"];
+    const icon_width = 79;
+    const icon_height = 270;
+    const num_icons = 9;
+    const indexes = [0, 0, 0];
+    const time_per_icon = 100;
+
+    const reelsRef = useRef([]);
+
 
     useEffect(() => {
+
         const timer = setInterval(() => {
             if (progress < 100) {
                 setProgress(progress + 1);
@@ -25,84 +30,89 @@ function Home() {
             }
         }, 20);
         return () => clearInterval(timer);
-    }, [progress]);
+    }, [progress, isLoading]);
 
-    useEffect(() => {
-        if (!isLoading) {
-            finishHandler();
+
+
+
+
+    const roll = (reel, offset = 0) => {
+        const delta = (offset + 2) * num_icons + Math.round(Math.random() * num_icons);
+        console.log(delta);
+        if (reel) {
+
+            const style = getComputedStyle(reel);
+            const backgroundPositionY = parseFloat(style['background-position-y']);
+
+            return new Promise((resolve, reject) => {
+                reel.style.transition = `background-position-y ${(8 + 1 * delta) * time_per_icon}ms cubic-bezier(.41,-0.01,.63,1.09)`;
+                // Set background position
+                reel.style.backgroundPositionY = `${backgroundPositionY + delta * icon_height}px`;
+                // After animation
+
+                setTimeout(() => {
+                    // Resolve this promise
+                    resolve(delta % num_icons);
+                }, (8 + 1 * delta) * time_per_icon + offset * 150);
+            })
+
         }
-    }, [isLoading]);
-
-    useEffect(() => {
-        if (position.length === 3) {
-            const first = position[0];
-            const results = position.every((match) => match === first);
-            setWinner(results);
-            if (results) {
-                const index = positions.findIndex((pos) => pos === first);
-                const positionScore = scores[index];
-                setScore((prevScore) => prevScore + positionScore);
-            }
-        }
-    }, [position]);
-
-    useEffect(() => {
-        if (position.length === 3) {
-            const first = position[0];
-            const results = position.every(match => match === first);
-            setWinner(results);
-            if (results) {
-                const index = positions.findIndex(pos => pos === first);
-                const positionScore = scores[index];
-                setScore(prevScore => prevScore + positionScore);
-            }
-        }
-        if (count > 0) {
-            if (score <= 100) {
-                handleClick();
-            }
-        }
-
-
-    }, [position]);
-
-    const handleClick = () => {
-        setPosition([]);
-        finishHandler();
-        setCount(count + 1);
-
-    };
-
-    const finishHandler = () => {
-        const newPositions = Array.from({ length: 3 }, () => {
-            const randomIndex = Math.floor(Math.random() * positions.length);
-            return positions[randomIndex];
-        });
-        setPosition(newPositions);
-    };
-
-    if (isLoading) {
-        return <LoadingScreen progress={progress} />;
     }
+
+
+    const rollAll = () => {
+        const reelsList = reelsRef.current;
+
+
+        Promise
+
+            // Activate each reel, must convert NodeList to Array for this with spread operator
+            .all(reelsList.map((reel, i) => roll(reel, i)))
+
+            // When all reels done animating (all promises solve)
+            .then((deltas) => {
+                console.log("deltas", deltas);
+                // add up indexes
+                deltas.forEach((delta, i) => indexes[i] = (indexes[i] + delta) % num_icons);
+                console.log(indexes);
+                indexes.map((index) => console.log(iconMap[index]));
+                // // Win conditions
+                // if (indexes[0] == indexes[1] || indexes[1] == indexes[2]) {
+                //     const winCls = indexes[0] == indexes[2] ? "win2" : "win1";
+                //     document.querySelector(".slots").classList.add(winCls);
+                //     setTimeout(() => document.querySelector(".slots").classList.remove(winCls), 2000)
+                // }
+
+                // Again!
+                // setTimeout(rollAll, 3000);
+            });
+    };
+
+    // Kickoff
+    // setTimeout(rollAll, 1000);
+    // reelsList.forEach((reel, i) => {
+    //     console.log(reel, i);
+    //     roll(reel, i).then((delta) => { console.log(delta); })
+    // });
+
+    // useEffect(() => {
+    //     rollAll();
+    // }, []);
+
+    // if (isLoading) {
+    //     return <LoadingScreen progress={progress} />;
+    // }
 
     return (
         <>
-            <div className={`spinner-container`}>
-                {position.map((pos, index) => (
-                    <div key={index} style={{ backgroundPosition: '0px ' + pos + 'px' }} className={`icons`} />
-                ))}
+            <div className="slots">
+                <div className="reel" ref={(el) => (reelsRef.current[0] = el)}></div>
+                <div className="reel" ref={(el) => (reelsRef.current[1] = el)}></div>
+                <div className="reel" ref={(el) => (reelsRef.current[2] = el)}></div>
             </div>
-            <div>
-                <h2 style={{ color: 'white' }}>จำนวนครั้งที่กดได้: {count}</h2>
-                <h1 style={{ color: winner ? 'green' : 'red' }}>
-                    {winner ? 'Winner!' : 'Loss'}
-                </h1>
-                <h2 style={{ color: 'white' }}>คะแนน: {score}</h2>
-                <button aria-label='Play again.' onClick={handleClick} disabled={score >= 100} className='bt-spin'>spin</button>
-            </div>
-
-
-
+            <button onClick={rollAll}>spin</button>
+            <img className="imggame" src={imggame} />
+            {/* <div id="debug" className="debug"></div> */}
         </>
     );
 }
