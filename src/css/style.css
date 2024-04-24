@@ -161,6 +161,7 @@ span.bonus-text {
     cursor: pointer;
     margin-bottom: 5rem;
 }
+
 .session-group- {
     display: grid;
     grid-template-columns: 1fr 3fr;
@@ -175,7 +176,7 @@ span.bonus-text {
     background-position: center;
     width: 382px;
     height: 160px;
-    padding: 6rem 3rem 2rem 12rem;
+    padding: 6rem 1rem 1rem 12rem;
 }
 
 .bt-spin {

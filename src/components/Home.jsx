@@ -6,7 +6,7 @@ function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [progress, setProgress] = useState(0);
   const [showAd, setShowAd] = useState(false); // เริ่มต้นโชว์โฆษณาเป็น false
-  const [score, setScore] = useState(false);
+  const [score, setScore] = useState(0);
 
   // const iconMap = ["banana", "seven", "cherry", "plum", "orange", "bell", "bar", "lemon", "melon"];
   const icon_width = 350;
@@ -150,12 +150,12 @@ function Home() {
         </div>
         <div className="group-bnt">
           <div className="bg-bonus">
-            {/* <span className="bonus-text">{score} ฿</span> */}
+            <span className="bonus-text">{score} ฿</span>
           </div>
           <div
             aria-label="Play again."
             onClick={rollAll}
-            // disabled={score >= 100}
+            disabled={score >= 1000}
             className="bt-spin"
           ></div>
         </div>
