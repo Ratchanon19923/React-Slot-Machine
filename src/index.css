@@ -47,6 +47,9 @@ h1 span {
   padding: 0 80px;
   transform: translateZ(0);
   background-size: 100%;
+  border-radius: 21.648px;
+  border: 6.367px solid #69a6c0bf;
+  box-shadow: 0px 2.547px 19.101px 6.367px rgba(173, 0, 255, 0.80);
 }
 
 
