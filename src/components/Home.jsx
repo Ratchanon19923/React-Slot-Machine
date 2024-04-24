@@ -76,24 +76,22 @@ function Home() {
 
   if (showAd) {
     return (
-      <div className="ad-container">
-        <div className="background-box">
-          <div className="sesion-box-top">
-            <img
-              src="../src/images/bnt.png"
-              alt="ปิด"
-              onClick={handleAdClose}
-              className="bnt-game"
-            />
-          </div>
+      <div className="session-box">
+        <div className="background-Modal">
+          <img
+            src="../src/images/bnt.png"
+            alt="ปิด"
+            onClick={handleAdClose}
+            className="bnt-game"
+          />
         </div>
       </div>
     );
   }
 
   return (
-    <div className="background-box-">
-      <div className="session-box">
+    <div className="session-box">
+      <div className="background-Home">
         <div className="logo-head"></div>
         <div className="spinner-container">
           {position.map((pos, index) => (
@@ -104,7 +102,7 @@ function Home() {
             />
           ))}
         </div>
-        <div>
+        <div className="group-bnt">
           <h2 className="bg-bonus">{score}</h2>
           <div
             aria-label="Play again."
