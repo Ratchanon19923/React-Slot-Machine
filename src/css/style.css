@@ -7,18 +7,17 @@
 
 
 .slots {
-    width: 650px !important;
-    height: 600px !important;
-    /* border: 1px solid black; */
-    padding: 1rem;
+    width: 350px !important;
+    height: 320px !important;
     display: flex;
     justify-content: space-between;
+    margin-left: 15px;
 
 
     .reel {
         border: 1px solid black;
-        width: 200px !important;
-        height: 600px !important;
+        width: 110px !important;
+        height: 320px !important;
         background-image: url(../assets/gamespin.png);
         background-size: 100%;
         background-repeat: repeat-y;
