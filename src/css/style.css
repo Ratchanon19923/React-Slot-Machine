@@ -25,6 +25,14 @@
     }
 }
 
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/Inter.ttf') format('Inter')
+  }
+  
+  body {
+    font-family: 'Inter'
+  }
 .logo {
     height: 6em;
     padding: 1.5em;
