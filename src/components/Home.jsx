@@ -66,14 +66,14 @@ function Home() {
         // indexes.map((index) => console.log(iconMap[index]));
 
         // Win conditions
-        if (indexes[0] == indexes[1] || indexes[1] == indexes[2]) {
-          setScore(score + 50)
-          alert("50")
-        }
-        else if (indexes[0] == indexes[1] == indexes[2]) {
-          setScore(score + 1000)
-          alert("win...999...")
-        }
+        // if (indexes[0] == indexes[1] || indexes[1] == indexes[2]) {
+        //   setScore(score + 50)
+        //   alert("50")
+        // }
+        // else if (indexes[0] == indexes[1] == indexes[2]) {
+        //   setScore(score + 1000)
+        //   alert("win...999...")
+        // }
 
         // Again!
         // setTimeout(rollAll, 100);
@@ -95,9 +95,9 @@ function Home() {
   }, [progress]);
 
   useEffect(() => {
-    // if (!isLoading && !showAd) {
-    //   finishHandler(); // เมื่อโหลดเสร็จแล้วและไม่แสดงโฆษณา ให้เริ่มเกมส์
-    // }
+    if (!isLoading && !showAd) {
+      // rollAll(); // เมื่อโหลดเสร็จแล้วและไม่แสดงโฆษณา ให้เริ่มเกมส์
+    }
   }, [isLoading, showAd]);
 
 
