@@ -104,6 +104,7 @@ span.bonus-text {
     width: 430px;
     height: 932px;
     padding: 1rem;
+    display: grid;
 }
 
 .background-Home {
@@ -148,11 +149,7 @@ span.bonus-text {
     width: 187px;
     height: 89px;
     cursor: pointer;
-    margin: auto;
-    position: fixed;
-    bottom: 0rem;
-    transform: translate(-50%, -200%);
-    left: 50%;
+    margin-bottom: 5rem;
 }
 
 .bnt-game:hover {
@@ -162,11 +159,14 @@ span.bonus-text {
     width: 187px;
     height: 89px;
     cursor: pointer;
-    margin: auto;
-    position: fixed;
-    bottom: 0rem;
-    transform: translate(-50%, -140%);
-    left: 50%;
+    margin-bottom: 5rem;
+}
+.session-group- {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    width: 100%;
+    align-items: end;
+    margin-bottom: 1rem;
 }
 
 .bg-bonus {
@@ -233,7 +233,6 @@ span.bonus-text {
 }
 
 .icon-group-modal- {
-    position: absolute;
     bottom: 7rem;
     display: grid;
     grid-gap: 1rem;

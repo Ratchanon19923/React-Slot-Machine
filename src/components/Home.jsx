@@ -119,11 +119,13 @@ function Home() {
           <div className="icon-group-modal">
             <div className="icon-close-modal"></div>
           </div>
-          <div className="icon-group-modal-">
-            <div className="icon-home-modal"></div>
-            <div className="icon-music-modal"></div>
+          <div className="session-group-">
+            <div className="icon-group-modal-">
+              <div className="icon-home-modal"></div>
+              <div className="icon-music-modal"></div>
+            </div>
+            <div onClick={handleAdClose} className="bnt-game"></div>
           </div>
-          <div onClick={handleAdClose} className="bnt-game"></div>
         </div>
       </div>
     );
