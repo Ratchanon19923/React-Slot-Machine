@@ -1,21 +1,85 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "../css/style.css";
 import LoadingScreen from "./LoadingScreen";
 
 function Home() {
-  const [position, setPosition] = useState([]);
-  const [count, setCount] = useState(0);
-  const [winner, setWinner] = useState(false);
-  const [score, setScore] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [progress, setProgress] = useState(0);
   const [showAd, setShowAd] = useState(false); // เริ่มต้นโชว์โฆษณาเป็น false
+  const [score, setScore] = useState(false);
 
-  const iconHeight = 188;
-  const multiplier = Math.floor(Math.random() * (4 - 1) + 1);
-  const speed = iconHeight * multiplier;
-  const positions = [-940, -188, -0, -376, -1316, -1504, -564, -752, -1128];
-  const scores = [5, 10, 15, 20, 25, 30, 35, 40, 45];
+  // const iconMap = ["banana", "seven", "cherry", "plum", "orange", "bell", "bar", "lemon", "melon"];
+  const icon_width = 350;
+  const icon_height = 330;
+  const num_icons = 9;
+  const indexes = [0, 0, 0];
+  const time_per_icon = 100;
+
+  const reelsRef = useRef([]);
+
+
+  const roll = (reel, offset = 0) => {
+    const delta = (offset + 2) * num_icons + Math.round(Math.random() * num_icons);
+    console.log(delta);
+    if (reel) {
+
+      const style = getComputedStyle(reel);
+      // Current background position
+      const backgroundPositionY = parseFloat(style['background-position-y']);
+      // Target background position
+      const targetBackgroundPositionY = backgroundPositionY + delta * icon_height;
+      // Normalized background position, for reset
+      const normTargetBackgroundPositionY = targetBackgroundPositionY % (num_icons * icon_height);
+
+      return new Promise((resolve, reject) => {
+
+        reel.style.transition = `background-position-y ${8 + delta * time_per_icon}ms cubic-bezier(.41,-0.01,.63,1.09)`;
+        // Set background position
+        reel.style.backgroundPositionY = `${targetBackgroundPositionY}px`;
+        // After animation
+
+        setTimeout(() => {
+          // Reset position, so that it doesn't get higher without limit
+          reel.style.transition = `none`;
+          reel.style.backgroundPositionY = `${normTargetBackgroundPositionY}px`;
+          // Resolve this promise
+          resolve(delta % num_icons);
+        }, 8 + delta * time_per_icon);
+      })
+
+    }
+  }
+
+
+  const rollAll = () => {
+    const reelsList = reelsRef.current;
+
+    Promise
+      // Activate each reel, must convert NodeList to Array for this with spread operator
+      .all(reelsList.map((reel, i) => roll(reel, i)))
+
+      // When all reels done animating (all promises solve)
+      .then((deltas) => {
+        // add up indexes
+        deltas.forEach((delta, i) => indexes[i] = (indexes[i] + delta) % num_icons);
+        console.log(indexes);
+        // indexes.map((index) => console.log(iconMap[index]));
+
+        // Win conditions
+        // if (indexes[0] == indexes[1] || indexes[1] == indexes[2]) {
+        //   setScore(score + 50)
+        //   alert("50")
+        // }
+        // else if (indexes[0] == indexes[1] == indexes[2]) {
+        //   setScore(score + 1000)
+        //   alert("win...999...")
+        // }
+
+        // Again!
+        // setTimeout(rollAll, 100);
+
+      });
+  };
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -32,39 +96,13 @@ function Home() {
 
   useEffect(() => {
     if (!isLoading && !showAd) {
-      finishHandler(); // เมื่อโหลดเสร็จแล้วและไม่แสดงโฆษณา ให้เริ่มเกมส์
+      // rollAll(); // เมื่อโหลดเสร็จแล้วและไม่แสดงโฆษณา ให้เริ่มเกมส์
     }
   }, [isLoading, showAd]);
 
-  useEffect(() => {
-    if (position.length === 3) {
-      const first = position[0];
-      const results = position.every((match) => match === first);
-      setWinner(results);
-      if (results) {
-        const index = positions.findIndex((pos) => pos === first);
-        const positionScore = scores[index];
-        setScore((prevScore) => prevScore + positionScore);
-      }
-    }
-    if (count > 0 && score <= 100) {
-      handleClick();
-    }
-  }, [position, count]);
 
-  const handleClick = () => {
-    setPosition([]);
-    finishHandler();
-    setCount(count + 1);
-  };
 
-  const finishHandler = () => {
-    const newPositions = Array.from({ length: 3 }, () => {
-      const randomIndex = Math.floor(Math.random() * positions.length);
-      return positions[randomIndex];
-    });
-    setPosition(newPositions);
-  };
+
 
   const handleAdClose = () => {
     setShowAd(false);
@@ -102,22 +140,20 @@ function Home() {
           <div className="logo-head"></div>
         </div>
         <div className="spinner-container">
-          {position.map((pos, index) => (
-            <div
-              key={index}
-              style={{ backgroundPosition: `0px ${pos}px` }}
-              className="icons"
-            />
-          ))}
+          <div className="slots">
+            <div className="reel" ref={(el) => (reelsRef.current[0] = el)}></div>
+            <div className="reel" ref={(el) => (reelsRef.current[1] = el)}></div>
+            <div className="reel" ref={(el) => (reelsRef.current[2] = el)}></div>
+          </div>
         </div>
         <div className="group-bnt">
           <div className="bg-bonus">
-            <span className="bonus-text">{score} ฿</span>
+            {/* <span className="bonus-text">{score} ฿</span> */}
           </div>
           <div
             aria-label="Play again."
-            onClick={handleClick}
-            disabled={score >= 100}
+            onClick={rollAll}
+            // disabled={score >= 100}
             className="bt-spin"
           ></div>
         </div>
