@@ -78,12 +78,14 @@ function Home() {
     return (
       <div className="session-box">
         <div className="background-Modal">
-          <img
-            src="../src/images/bnt.png"
-            alt="ปิด"
-            onClick={handleAdClose}
-            className="bnt-game"
-          />
+          <div className="icon-group-modal">
+            <div className="icon-close-modal"></div>
+          </div>
+          <div className="icon-group-modal-">
+            <div className="icon-home-modal"></div>
+            <div className="icon-music-modal"></div>
+          </div>
+          <div onClick={handleAdClose} className="bnt-game"></div>
         </div>
       </div>
     );
@@ -92,7 +94,13 @@ function Home() {
   return (
     <div className="session-box">
       <div className="background-Home">
-        <div className="logo-head"></div>
+        <div className="icon-head">
+          <div className="icon-music"></div>
+          <div className="icon-close"></div>
+        </div>
+        <div className="group-logo-head">
+          <div className="logo-head"></div>
+        </div>
         <div className="spinner-container">
           {position.map((pos, index) => (
             <div
@@ -103,7 +111,9 @@ function Home() {
           ))}
         </div>
         <div className="group-bnt">
-          <h2 className="bg-bonus">{score}</h2>
+          <div className="bg-bonus">
+            <span className="bonus-text">{score} ฿</span>
+          </div>
           <div
             aria-label="Play again."
             onClick={handleClick}

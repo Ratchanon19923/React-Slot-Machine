@@ -77,7 +77,8 @@ h1 span {
   align-items: center;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 5px;
-  padding: 2rem;
+  padding: 1.3rem;
+  margin-top: -1rem;
 }
 
 .app-wrap.winner-false {
@@ -150,4 +151,23 @@ body {
   background-color: #25D9F5;
   transition:  width 0.5 ease-out;
   color: #fff;
+}
+
+@media screen and (max-width: 500px){
+  .icons {
+    height: 320px;
+  }
+  .spinner-container {
+    padding: 1.5rem;
+    margin-top: -1.5rem;
+  }
+}
+@media screen and (max-width: 380px){
+  .icons {
+    height: 240px;
+  }
+  .spinner-container {
+    padding: 1.5rem;
+    margin-top: -1.5rem;
+  }
 }
