@@ -146,8 +146,8 @@ span.bonus-text {
     background-image: url(../src/images/bnt-spin.png);
     background-size: 100% 100%;
     background-position: center;
-    width: 244px;
-    height: 179px;
+    width: 230px;
+    height: 165px;
     cursor: pointer;
     margin: auto;
 
@@ -156,8 +156,8 @@ span.bonus-text {
     background-image: url(../src/images/bnt-spin1.png);
     background-size: 100% 100%;
     background-position: center;
-    width: 244px;
-    height: 179px;
+    width: 230px;
+    height: 165px;
     cursor: pointer;
     margin: auto;
 
