@@ -62,21 +62,25 @@ function Home() {
       .then((deltas) => {
         // add up indexes
         deltas.forEach((delta, i) => indexes[i] = (indexes[i] + delta) % num_icons);
-        console.log(indexes);
+        console.log("indexes", indexes);
         // indexes.map((index) => console.log(iconMap[index]));
-
-        // Win conditions
-        if (indexes[0] == indexes[1] || indexes[1] == indexes[2]) {
-          setScore(score + 50)
-          // alert("50")
-        }
-        // else if (indexes[0] == indexes[1] == indexes[2]) {
-        //   setScore(score + 1000)
-        //   alert("win...999...")
+        // if (score < 300) {
+        //   if (indexes[0] == indexes[1] || indexes[1] == indexes[2]) {
+        //     const winCls = indexes[0] == indexes[2] ? "win2" : "win1";
+        //     console.log(winCls);
+        //     if (winCls === "win1") {
+        //       setScore(score + 100)
+        //     }
+        //     else if (winCls === "win2") {
+        //       setScore(score + 50)
+        //     }
+        //   }
+        //   // Again!
+        //   // setTimeout(rollAll, 100);
         // }
-
-        // Again!
-        // setTimeout(rollAll, 100);
+        // else {
+        //   alert("win")
+        // }
 
       });
   };
@@ -155,7 +159,7 @@ function Home() {
           <div
             aria-label="Play again."
             onClick={rollAll}
-            disabled={score >= 1000}
+            disabled={score >= 300}
             className="bt-spin"
           ></div>
         </div>
