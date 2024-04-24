@@ -4,6 +4,27 @@
     padding: 2rem;
     text-align: center;
 } */
+
+
+.slots {
+    width: 350px !important;
+    height: 330px !important;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 15px;
+
+
+    .reel {
+        width: 110px !important;
+        height: 330px !important;
+        background-image: url(../assets/gamespin.png);
+        background-size: 100%;
+        background-repeat: repeat-y;
+        background-position: 0 0;
+        border-radius: 10px;
+    }
+}
+
 @font-face {
     font-family: 'Inter';
     src: url('../fonts/Inter.ttf') format('Inter')
@@ -50,6 +71,7 @@
 .read-the-docs {
     color: #888;
 }
+
 span.bonus-text {
     color: #FFF;
     -webkit-text-stroke: 3px #5C4300;
@@ -60,6 +82,7 @@ span.bonus-text {
     font-weight: 700;
     line-height: normal;
 }
+
 .session-box {
     width: 430px;
     height: 100vh;
@@ -69,6 +92,7 @@ span.bonus-text {
     justify-content: center;
     align-items: center;
 }
+
 .background-Loading {
     background-image: url("../src/images/bg2.png");
     background-size: 100% 100%;
@@ -80,6 +104,7 @@ span.bonus-text {
     justify-content: center;
     align-items: center;
 }
+
 .background-Modal {
     background-image: url("../src/images/bg1.png");
     background-size: 100% 100%;
@@ -89,6 +114,7 @@ span.bonus-text {
     padding: 1rem;
     display: grid;
 }
+
 .background-Home {
     background-image: url("../src/images/bg6.png");
     background-size: 100% 100%;
@@ -97,29 +123,34 @@ span.bonus-text {
     height: 932px;
     padding: 1rem;
 }
+
 .group-bnt {
     display: grid;
     justify-content: center;
     align-items: end;
 }
+
 .logo-head {
     background-image: url("../src/images/logo2.png");
     background-size: 100% 100%;
     background-position: center;
-    width: 381px;
-    height: 203px;
+    width: 404px;
+    height: 186px;
     margin-top: -1rem;
 }
+
 .icon-group-modal {
     display: flex;
     justify-content: flex-end;
 }
-.logo-load{
+
+.logo-load {
     width: 258px;
     height: 78px;
     margin: 2rem auto;
 }
-.bnt-game{
+
+.bnt-game {
     background-image: url("../src/images/bnt.png");
     background-size: 100% 100%;
     background-position: center;
@@ -128,7 +159,8 @@ span.bonus-text {
     cursor: pointer;
     margin-bottom: 5rem;
 }
-.bnt-game:hover{
+
+.bnt-game:hover {
     background-image: url("../src/images/bnt1.png");
     background-size: 100% 100%;
     background-position: center;
@@ -137,6 +169,7 @@ span.bonus-text {
     cursor: pointer;
     margin-bottom: 5rem;
 }
+
 .session-group- {
     display: grid;
     grid-template-columns: 1fr 3fr;
@@ -144,39 +177,44 @@ span.bonus-text {
     align-items: end;
     margin-bottom: 1rem;
 }
+
 .bg-bonus {
     background-image: url("../src/images/bg-bonus.png");
     background-size: 100% 100%;
     background-position: center;
-    width: 384px;
-    height: 162.302px;
+    width: 382px;
+    height: 160px;
     padding: 6rem 1rem 1rem 12rem;
 }
+
 .bt-spin {
     background-image: url(../src/images/bnt-spin.png);
     background-size: 100% 100%;
     background-position: center;
-    width: 210px;
-    height: 145px;
+    width: 220px;
+    height: 150px;
     cursor: pointer;
     margin: auto;
 
 }
+
 .bt-spin:hover {
     background-image: url(../src/images/bnt-spin1.png);
     background-size: 100% 100%;
     background-position: center;
-    width: 210px;
-    height: 145px;
+    width: 220px;
+    height: 150px;
     cursor: pointer;
     margin: auto;
 
 }
+
 .icon-head {
     display: flex;
     justify-content: space-between;
 }
-.icon-music{
+
+.icon-music {
     background-image: url(../src/images/icon-music.png);
     background-size: 100% 100%;
     background-position: center;
@@ -184,7 +222,8 @@ span.bonus-text {
     height: 51px;
     cursor: pointer;
 }
-.icon-close{
+
+.icon-close {
     background-image: url(../src/images/icon-close.png);
     background-size: 100% 100%;
     background-position: center;
@@ -192,7 +231,8 @@ span.bonus-text {
     height: 50px;
     cursor: pointer;
 }
-.icon-close-modal{
+
+.icon-close-modal {
     background-image: url(../src/images/icon-close.png);
     background-size: 100% 100%;
     background-position: center;
@@ -200,12 +240,14 @@ span.bonus-text {
     height: 50px;
     cursor: pointer;
 }
+
 .icon-group-modal- {
     bottom: 7rem;
     display: grid;
     grid-gap: 1rem;
 }
-.icon-home-modal{
+
+.icon-home-modal {
     background-image: url(../src/images/icon-home.png);
     background-size: 100% 100%;
     background-position: center;
@@ -213,7 +255,8 @@ span.bonus-text {
     height: 50px;
     cursor: pointer;
 }
-.icon-music-modal{
+
+.icon-music-modal {
     background-image: url(../src/images/icon-music.png);
     background-size: 100% 100%;
     background-position: center;
@@ -221,68 +264,91 @@ span.bonus-text {
     height: 50px;
     cursor: pointer;
 }
-@media screen and (max-width: 500px){
-    .session-box,.background-Loading,.background-Modal,.background-Home {
+
+@media screen and (max-width: 500px) {
+
+    .session-box,
+    .background-Loading,
+    .background-Modal,
+    .background-Home {
         width: 100%;
         height: 100vh;
     }
+
     .bnt-game {
         transform: translate(-50%, -110%);
     }
+
     .bnt-game:hover {
         transform: translate(-50%, -110%);
     }
+
     .group-logo-head {
         display: flex;
         justify-content: center;
     }
+
     .logo-head {
         width: 331px;
         height: 186px;
         margin-top: -1rem;
     }
+
     .bg-bonus {
         width: 380px;
         height: 162px;
         margin-top: -1rem;
         padding: 5.9rem 1rem 1rem 11rem;
     }
+
     .bt-spin {
         width: 214px;
         height: 149px;
         margin-top: -1rem;
     }
+
     .bt-spin:hover {
         width: 214px;
         height: 149px;
         margin-top: -1rem;
     }
 }
-@media screen and (max-width: 380px){
-    .session-box,.background-Loading,.background-Modal,.background-Home {
+
+@media screen and (max-width: 380px) {
+
+    .session-box,
+    .background-Loading,
+    .background-Modal,
+    .background-Home {
         width: 100%;
     }
+
     .bnt-game {
         transform: translate(-50%, -60%);
     }
+
     .bnt-game:hover {
         transform: translate(-50%, -60%);
     }
+
     .logo-head {
         width: 331px;
         height: 165px;
     }
+
     .bg-bonus {
         width: 310px;
         height: 110px;
         margin-top: -1rem;
         padding: 3.5rem 1rem 1rem 10rem;
     }
+
     .bt-spin {
         width: 165px;
         height: 90px;
         margin-top: -1rem;
     }
+
     .bt-spin:hover {
         width: 165px;
         height: 90px;
