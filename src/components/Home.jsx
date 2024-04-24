@@ -103,25 +103,31 @@ function Home() {
 
   if (showAd) {
     return (
-      <div className="ad-container">
-        <div className="background-box">
-          <div className="sesion-box-top">
-            <img
-              src="../src/images/bnt.png"
-              alt="ปิด"
-              onClick={handleAdClose}
-              className="bnt-game"
-            />
+      <div className="session-box">
+        <div className="background-Modal">
+          <div className="icon-group-modal">
+            <div className="icon-close-modal"></div>
           </div>
+          <div className="icon-group-modal-">
+            <div className="icon-home-modal"></div>
+            <div className="icon-music-modal"></div>
+          </div>
+          <div onClick={handleAdClose} className="bnt-game"></div>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="background-box-">
-      <div className="session-box">
-        <div className="logo-head"></div>
+    <div className="session-box">
+      <div className="background-Home">
+        <div className="icon-head">
+          <div className="icon-music"></div>
+          <div className="icon-close"></div>
+        </div>
+        <div className="group-logo-head">
+          <div className="logo-head"></div>
+        </div>
         <div className="spinner-container">
           <div className="slots">
             <div className="reel" ref={(el) => (reelsRef.current[0] = el)}></div>
@@ -129,8 +135,10 @@ function Home() {
             <div className="reel" ref={(el) => (reelsRef.current[2] = el)}></div>
           </div>
         </div>
-        <div>
-          {/* <h2 className="bg-bonus">{score}</h2> */}
+        <div className="group-bnt">
+          <div className="bg-bonus">
+            {/* <span className="bonus-text">{score} ฿</span> */}
+          </div>
           <div
             aria-label="Play again."
             onClick={rollAll}

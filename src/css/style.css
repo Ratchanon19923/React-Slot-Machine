@@ -66,51 +66,72 @@
     color: #888;
 }
 
-button.bt-spin {
-    width: 150px;
-    font-size: 25px;
-    border-radius: 15px;
-    font-weight: 600;
-    color: #fff;
-    background-color: #25D9F5;
-}
-
-.background-box {
-    background-image: url("../src/images/bg4.png");
-    background-size: 100% 100%;
-    background-position: center;
-    width: 100%;
-    height: 100vh;
-}
-
-.background-box- {
-    background-image: url("../src/images/bg5.png");
-    background-size: 100% 100%;
-    background-position: center;
-    width: 100%;
-    height: 100vh;
+span.bonus-text {
+    color: #FFF;
+    -webkit-text-stroke: 3px #5C4300;
+    text-shadow: 5.132px 5.132px 5.132px rgba(0, 0, 0, 0.50);
+    text-align: right;
+    font-size: 28.592px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
 }
 
 .session-box {
-    margin: 0 auto;
-    padding: 2rem;
+    width: 430px;
+    height: 100vh;
+    margin: auto;
     text-align: center;
 }
 
-.background-box-load {
-    background-image: url("../src/images/bg3.png");
+.background-Loading {
+    background-image: url("../src/images/bg2.png");
     background-size: 100% 100%;
     background-position: center;
-    width: 100%;
+    width: 430px;
     height: 100vh;
-}
-
-.sesion-box-top {
+    padding: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+}
+
+.background-Modal {
+    background-image: url("../src/images/bg1.png");
+    background-size: 100% 100%;
+    background-position: center;
+    width: 430px;
     height: 100vh;
+    padding: 1rem;
+}
+
+.background-Home {
+    background-image: url("../src/images/bg6.png");
+    background-size: 100% 100%;
+    background-position: center;
+    width: 430px;
+    height: 100vh;
+    padding: 1rem;
+}
+
+.group-bnt {
+    display: grid;
+    justify-content: center;
+    align-items: end;
+}
+
+.logo-head {
+    background-image: url("../src/images/logo2.png");
+    background-size: 100% 100%;
+    background-position: center;
+    width: 381px;
+    height: 203px;
+    margin-top: -1rem;
+}
+
+.icon-group-modal {
+    display: flex;
+    justify-content: flex-end;
 }
 
 .logo-load {
@@ -120,99 +141,207 @@ button.bt-spin {
 }
 
 .bnt-game {
-    width: 289px;
-    height: 138px;
-    cursor: pointer;
-    position: fixed;
-    bottom: 10%;
-}
-
-h2.bg-bonus {
-    background-image: url("../src/images/bg-bonus1.png");
+    background-image: url("../src/images/bnt.png");
     background-size: 100% 100%;
     background-position: center;
-    width: 321px;
-    height: 167.327px;
-    padding: 6rem 1rem 1rem 6rem;
-    transform: translate(70%, -160%) scale(.62, .62);
-    position: absolute;
-    top: 50%;
+    width: 187px;
+    height: 89px;
+    cursor: pointer;
+    margin: auto;
+    position: fixed;
+    bottom: 0rem;
+    transform: translate(-50%, -140%);
     left: 50%;
+}
+
+.bnt-game:hover {
+    background-image: url("../src/images/bnt1.png");
+    background-size: 100% 100%;
+    background-position: center;
+    width: 187px;
+    height: 89px;
+    cursor: pointer;
+    margin: auto;
+    position: fixed;
+    bottom: 0rem;
+    transform: translate(-50%, -140%);
+    left: 50%;
+}
+
+.bg-bonus {
+    background-image: url("../src/images/bg-bonus.png");
+    background-size: 100% 100%;
+    background-position: center;
+    width: 384px;
+    height: 162.302px;
+    padding: 6rem 1rem 1rem 12rem;
 }
 
 .bt-spin {
     background-image: url(../src/images/bnt-spin.png);
     background-size: 100% 100%;
     background-position: center;
-    width: 700px;
-    height: 350px;
-    transform: translate(-50%, 50%) scale(.62, .62);
-    position: absolute;
-    top: 50%;
-    left: 50%;
+    width: 244px;
+    height: 179px;
     cursor: pointer;
+    margin: auto;
 
 }
 
-@media screen and (max-width: 600px) {
-    .background-box {
-        background-image: url("../src/images/bg1.png");
-    }
+.bt-spin:hover {
+    background-image: url(../src/images/bnt-spin1.png);
+    background-size: 100% 100%;
+    background-position: center;
+    width: 244px;
+    height: 179px;
+    cursor: pointer;
+    margin: auto;
 
-    .background-box- {
-        background-image: url("../src/images/bg6.png");
-    }
+}
 
-    .background-box-load {
-        background-image: url("../src/images/bg2.png");
+.icon-head {
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon-music {
+    background-image: url(../src/images/icon-music.png);
+    background-size: 100% 100%;
+    background-position: center;
+    width: 60px;
+    height: 51px;
+    cursor: pointer;
+}
+
+.icon-close {
+    background-image: url(../src/images/icon-close.png);
+    background-size: 100% 100%;
+    background-position: center;
+    width: 60px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.icon-close-modal {
+    background-image: url(../src/images/icon-close.png);
+    background-size: 100% 100%;
+    background-position: center;
+    width: 60px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.icon-group-modal- {
+    position: absolute;
+    bottom: 2rem;
+    display: grid;
+    grid-gap: 1rem;
+}
+
+.icon-home-modal {
+    background-image: url(../src/images/icon-home.png);
+    background-size: 100% 100%;
+    background-position: center;
+    width: 60px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.icon-music-modal {
+    background-image: url(../src/images/icon-music.png);
+    background-size: 100% 100%;
+    background-position: center;
+    width: 60px;
+    height: 50px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 500px) {
+
+    .session-box,
+    .background-Loading,
+    .background-Modal,
+    .background-Home {
+        width: 100%;
     }
 
     .bnt-game {
-        width: 187px;
-        height: 89px;
-        cursor: pointer;
-        position: fixed;
-        bottom: 10%;
+        transform: translate(-50%, -110%);
     }
 
-    h2.bg-bonus {
-        background-image: url("../src/images/bg-bonus.png");
-        width: 384px;
-        height: 162.73px;
-        padding: 6rem 1rem 1rem 6rem;
-        transform: translate(-50%, 45%) scale(.62, .62);
-        position: absolute;
-        top: 50%;
-        left: 50%;
+    .bnt-game:hover {
+        transform: translate(-50%, -110%);
     }
 
-    .bt-spin {
-        background-image: url("../src/images/bnt-spin.png");
-        background-size: 100% 100%;
-        background-position: center;
-        width: 244px;
-        height: 179px;
-        transform: translate(-50%, 100%) scale(.62, .62);
-        position: absolute;
-        top: 50%;
-        left: 50%;
+    .group-logo-head {
+        display: flex;
+        justify-content: center;
     }
 
     .logo-head {
-        background-image: url(../src/images/logo2.png);
-        background-size: 100% 100%;
-        background-position: center;
-        width: 350px;
-        height: 225px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 0rem;
-        transform: translate(-50%, 0%) scale(.62, .62);
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        z-index: 999;
-        top: 0;
+        width: 331px;
+        height: 186px;
+        margin-top: -1rem;
+    }
+
+    .bg-bonus {
+        width: 380px;
+        height: 162px;
+        margin-top: -1rem;
+        padding: 5.9rem 1rem 1rem 11rem;
+    }
+
+    .bt-spin {
+        width: 214px;
+        height: 149px;
+        margin-top: -1rem;
+    }
+
+    .bt-spin:hover {
+        width: 214px;
+        height: 149px;
+        margin-top: -1rem;
+    }
+}
+
+@media screen and (max-width: 380px) {
+
+    .session-box,
+    .background-Loading,
+    .background-Modal,
+    .background-Home {
+        width: 100%;
+    }
+
+    .bnt-game {
+        transform: translate(-50%, -60%);
+    }
+
+    .bnt-game:hover {
+        transform: translate(-50%, -60%);
+    }
+
+    .logo-head {
+        width: 331px;
+        height: 165px;
+    }
+
+    .bg-bonus {
+        width: 310px;
+        height: 110px;
+        margin-top: -1rem;
+        padding: 3.5rem 1rem 1rem 10rem;
+    }
+
+    .bt-spin {
+        width: 165px;
+        height: 90px;
+        margin-top: -1rem;
+    }
+
+    .bt-spin:hover {
+        width: 165px;
+        height: 90px;
+        margin-top: -1rem;
     }
 }
