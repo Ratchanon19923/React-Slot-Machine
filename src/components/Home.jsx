@@ -66,10 +66,10 @@ function Home() {
         // indexes.map((index) => console.log(iconMap[index]));
 
         // Win conditions
-        // if (indexes[0] == indexes[1] || indexes[1] == indexes[2]) {
-        //   setScore(score + 50)
-        //   alert("50")
-        // }
+        if (indexes[0] == indexes[1] || indexes[1] == indexes[2]) {
+          setScore(score + 50)
+          // alert("50")
+        }
         // else if (indexes[0] == indexes[1] == indexes[2]) {
         //   setScore(score + 1000)
         //   alert("win...999...")
