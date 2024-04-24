@@ -58,13 +58,16 @@ span.bonus-text {
     height: 100vh;
     margin: auto;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .background-Loading {
     background-image: url("../src/images/bg2.png");
     background-size: 100% 100%;
     background-position: center;
     width: 430px;
-    height: 100vh;
+    height: 932px;
     padding: 1rem;
     display: flex;
     justify-content: center;
@@ -75,7 +78,7 @@ span.bonus-text {
     background-size: 100% 100%;
     background-position: center;
     width: 430px;
-    height: 100vh;
+    height: 932px;
     padding: 1rem;
 }
 .background-Home {
@@ -83,7 +86,7 @@ span.bonus-text {
     background-size: 100% 100%;
     background-position: center;
     width: 430px;
-    height: 100vh;
+    height: 932px;
     padding: 1rem;
 }
 .group-bnt {
@@ -118,7 +121,7 @@ span.bonus-text {
     margin: auto;
     position: fixed;
     bottom: 0rem;
-    transform: translate(-50%, -140%);
+    transform: translate(-50%, -200%);
     left: 50%;
 }
 .bnt-game:hover{
@@ -146,8 +149,8 @@ span.bonus-text {
     background-image: url(../src/images/bnt-spin.png);
     background-size: 100% 100%;
     background-position: center;
-    width: 230px;
-    height: 165px;
+    width: 210px;
+    height: 145px;
     cursor: pointer;
     margin: auto;
 
@@ -156,8 +159,8 @@ span.bonus-text {
     background-image: url(../src/images/bnt-spin1.png);
     background-size: 100% 100%;
     background-position: center;
-    width: 230px;
-    height: 165px;
+    width: 210px;
+    height: 145px;
     cursor: pointer;
     margin: auto;
 
@@ -192,7 +195,7 @@ span.bonus-text {
 }
 .icon-group-modal- {
     position: absolute;
-    bottom: 2rem;
+    bottom: 7rem;
     display: grid;
     grid-gap: 1rem;
 }
@@ -215,6 +218,7 @@ span.bonus-text {
 @media screen and (max-width: 500px){
     .session-box,.background-Loading,.background-Modal,.background-Home {
         width: 100%;
+        height: 100vh;
     }
     .bnt-game {
         transform: translate(-50%, -110%);
