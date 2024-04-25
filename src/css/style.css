@@ -101,8 +101,9 @@ span.bonus-text {
     background-size: 100% 100%;
     background-position: center;
     width: 430px;
-    height: 900px;
-    padding: 1rem;
+    height: 100vh;
+    padding: 1rem 0rem;
+    overflow: auto;
     display: grid;
 }
 
@@ -111,6 +112,7 @@ span.bonus-text {
     background-size: 100% 100%;
     background-position: center;
     background-attachment: fixed;
+    width: 430px;
     height: 100vh;
     padding: 1rem 0rem;
     overflow: auto;
@@ -134,7 +136,6 @@ span.bonus-text {
 .icon-group-modal {
     display: flex;
     justify-content: flex-end;
-    margin-top: 2rem;
 }
 
 .logo-load {
@@ -151,6 +152,7 @@ span.bonus-text {
     height: 89px;
     cursor: pointer;
     margin-bottom: 5rem;
+    margin-left: 1rem;
 }
 
 .bnt-game:hover {
@@ -223,6 +225,7 @@ span.bonus-text {
     width: 60px;
     height: 50px;
     cursor: pointer;
+    margin-right: 1rem;
 }
 
 .icon-close-modal {
@@ -232,6 +235,7 @@ span.bonus-text {
     width: 60px;
     height: 50px;
     cursor: pointer;
+    margin-right: 1rem;
 }
 
 .icon-group-modal- {
