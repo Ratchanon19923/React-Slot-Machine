@@ -129,7 +129,7 @@ span.bonus-text {
     background-image: url("../src/images/logo2.png");
     background-size: 100% 100%;
     background-position: center;
-    width: 404px;
+    background-repeat: no-repeat;
     height: 175px;
 }
 
