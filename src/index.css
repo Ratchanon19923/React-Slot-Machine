@@ -78,7 +78,31 @@ h1 span {
     align-items: center;
     padding: 1.5rem;
     margin: -1rem auto;
+
 }
+
+@keyframes blink {
+    0% {
+        background-color: #fff;
+        /* สีพื้นหลังปกติ */
+    }
+
+    50% {
+        background-color: #ffff00;
+        /* สีพื้นหลังกระพริบ */
+    }
+
+    100% {
+        background-color: #fff;
+    }
+}
+
+.blink {
+    animation: blink 1s infinite;
+    /* กำหนดการกระพริบ */
+}
+
+
 
 .app-wrap.winner-false {
     animation: linear 1s spin;

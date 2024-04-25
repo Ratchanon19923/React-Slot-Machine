@@ -54,8 +54,6 @@ function Home() {
   const rollAll = () => {
     const reelsList = reelsRef.current;
 
-    setRound(round + 1)
-
     Promise
       // Activate each reel, must convert NodeList to Array for this with spread operator
       .all(reelsList.map((reel, i) => roll(reel, i)))
@@ -65,18 +63,17 @@ function Home() {
         // add up indexes
         deltas.forEach((delta, i) => indexes[i] = (indexes[i] + delta) % num_icons);
         console.log("indexes", indexes);
-        // indexes.map((index) => console.log(iconMap[index]));
-        if (score < 300) {
 
-          if (indexes[0] == indexes[1] && indexes[1] == indexes[2]) {
-            setScore(score + 300)
-            alert("win")
+        if (score < 300) {
+          if (indexes[0] == indexes[1] || indexes[1] == indexes[2]) {
+            setScore(score + 30);
+            return;
           }
           // Again!
-          setTimeout(rollAll, 100);
+          setTimeout(() => { setRound((current) => current + 1); rollAll() }, 100);
         }
-
       });
+
   };
 
   useEffect(() => {
@@ -148,7 +145,7 @@ function Home() {
         </div>
         <div className="group-bnt">
           <div className="bg-bonus">
-            <span className="bonus-text">{round} ฿</span>
+            <span className="bonus-text">{score} ฿</span>
           </div>
           <div
             aria-label="Play again."
