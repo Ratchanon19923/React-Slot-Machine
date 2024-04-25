@@ -23,7 +23,6 @@ function Home() {
   const roll = (reel, offset = 0) => {
     const delta =
       (offset + 2) * num_icons + Math.round(Math.random() * num_icons);
-    console.log(delta);
     if (reel) {
       const style = getComputedStyle(reel);
       // Current background position

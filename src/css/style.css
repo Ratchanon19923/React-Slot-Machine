@@ -1,7 +1,7 @@
-#root {
+/* #root {
     overflow: auto;
     height: 100vh;
-}
+} */
 
 
 .slots {
@@ -110,9 +110,10 @@ span.bonus-text {
     background-image: url("../src/images/bg6.png");
     background-size: 100% 100%;
     background-position: center;
-    width: 430px;
-    height: 900px;
-    padding: 1rem;
+    background-attachment: fixed;
+    height: 100vh;
+    padding: 1rem 0rem;
+    overflow: auto;
 }
 
 .group-bnt {
@@ -127,13 +128,13 @@ span.bonus-text {
     background-size: 100% 100%;
     background-position: center;
     width: 404px;
-    height: 186px;
-    margin-top: -2rem;
+    height: 175px;
 }
 
 .icon-group-modal {
     display: flex;
     justify-content: flex-end;
+    margin-top: 2rem;
 }
 
 .logo-load {
@@ -174,9 +175,10 @@ span.bonus-text {
     background-image: url("../src/images/bg-bonus.png");
     background-size: 100% 100%;
     background-position: center;
-    width: 382px;
-    height: 162px;
-    padding: 6rem 1rem 1rem 12rem;
+    width: 362px;
+    height: 140px;
+    padding: 5rem 1rem 1rem 12rem;
+    margin-bottom: 1rem;
 }
 
 .bt-spin {
@@ -184,9 +186,9 @@ span.bonus-text {
     background-size: 100% 100%;
     background-position: center;
     width: 210px;
-    height: 145px;
+    height: 140px;
     cursor: pointer;
-    margin: auto;
+    margin: 0rem auto;
 
 }
 
@@ -195,10 +197,9 @@ span.bonus-text {
     background-size: 100% 100%;
     background-position: center;
     width: 210px;
-    height: 145px;
+    height: 140px;
     cursor: pointer;
-    margin: auto;
-
+    margin: 0rem auto;
 }
 
 .icon-head {
@@ -349,7 +350,6 @@ span.text-pop2 {
     .logo-head {
         width: 331px;
         height: 186px;
-        margin-top: -1rem;
     }
 
     .bg-bonus {
@@ -357,6 +357,7 @@ span.text-pop2 {
         height: 162px;
         margin-top: -1rem;
         padding: 5.9rem 1rem 1rem 11rem;
+        margin-bottom: 1rem;
     }
 
     .bt-spin {
@@ -392,6 +393,7 @@ span.text-pop2 {
         height: 110px;
         margin-top: -1rem;
         padding: 3.5rem 1rem 1rem 10rem;
+        margin-bottom: 2rem;
     }
 
     .bt-spin {
