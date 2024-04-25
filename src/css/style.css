@@ -28,11 +28,12 @@
 @font-face {
     font-family: 'Inter';
     src: url('../fonts/Inter.ttf') format('Inter')
-  }
-  
-  body {
+}
+
+body {
     font-family: 'Inter'
-  }
+}
+
 .logo {
     height: 6em;
     padding: 1.5em;
@@ -98,7 +99,7 @@ span.bonus-text {
     background-size: 100% 100%;
     background-position: center;
     width: 430px;
-    height: 932px;
+    height: 900px;
     padding: 1rem;
     display: flex;
     justify-content: center;
@@ -110,7 +111,7 @@ span.bonus-text {
     background-size: 100% 100%;
     background-position: center;
     width: 430px;
-    height: 932px;
+    height: 900px;
     padding: 1rem;
     display: grid;
 }
@@ -120,7 +121,7 @@ span.bonus-text {
     background-size: 100% 100%;
     background-position: center;
     width: 430px;
-    height: 932px;
+    height: 900px;
     padding: 1rem;
 }
 
@@ -342,11 +343,14 @@ span.bonus-text {
         height: 90px;
         margin-top: -1rem;
     }
-    .bnt-game, .bnt-game:hover {
+
+    .bnt-game,
+    .bnt-game:hover {
         width: 172px;
         height: 74px;
         margin-bottom: 3.5rem;
     }
+
     .group-bnt {
         margin-top: 2rem;
     }
