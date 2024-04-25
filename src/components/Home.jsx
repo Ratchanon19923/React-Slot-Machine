@@ -3,6 +3,7 @@ import "../css/style.css";
 import LoadingScreen from "./LoadingScreen";
 
 function Home() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [progress, setProgress] = useState(0);
   const [showAd, setShowAd] = useState(false); // เริ่มต้นโชว์โฆษณาเป็น false
@@ -33,8 +34,9 @@ function Home() {
         targetBackgroundPositionY % (num_icons * icon_height);
 
       return new Promise((resolve, reject) => {
-        reel.style.transition = `background-position-y ${8 + delta * time_per_icon
-          }ms cubic-bezier(.41,-0.01,.63,1.09)`;
+        reel.style.transition = `background-position-y ${
+          8 + delta * time_per_icon
+        }ms cubic-bezier(.41,-0.01,.63,1.09)`;
         // Set background position
         reel.style.backgroundPositionY = `${targetBackgroundPositionY}px`;
         // After animation
@@ -66,13 +68,25 @@ function Home() {
           if (indexes[0] == indexes[1] && indexes[1] == indexes[2]) {
             setScore(score + 300);
             document.getElementById("winner").classList.add("winner");
+            setTimeout(() => {
+              setScore(score + 300);
+              setIsModalOpen(true);
+            }, 1000);
+            console.log("Modal open event triggered!");
             return;
           }
           // Again!
-          setTimeout(() => { setRound((current) => current + 1); rollAll() }, 100);
+          setTimeout(() => {
+            setRound((current) => current + 1);
+            rollAll();
+          }, 100);
         }
       });
+  };
 
+  const closeModalAndRemoveClass = () => {
+    setIsModalOpen(false);
+    document.getElementById("winner").classList.remove("winner");
   };
 
   useEffect(() => {
@@ -123,9 +137,27 @@ function Home() {
 
   return (
     <div className="session-box">
+      {isModalOpen && (
+        <div className="modal">
+          <div className="modal-content">
+            <div className="group-close-">
+              {" "}
+              <div className="close" onClick={closeModalAndRemoveClass}></div>
+            </div>
+            <div className="group-text-popup">
+              <span className="text-pop1">จำนวนสปิน</span>
+              <span className="text-pop2">฿</span>
+            </div>
+          </div>
+        </div>
+      )}
+
       <div className="background-Home">
         <div className="icon-head">
-          <div className="icon-music"></div>
+          <div
+            className="icon-music"
+            onClick={() => setIsModalOpen(true)}
+          ></div>
           <div className="icon-close"></div>
         </div>
         <div className="group-logo-head">
