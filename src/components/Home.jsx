@@ -120,8 +120,8 @@ function Home() {
   }, [isLoading, showAd]);
 
   const handleAdClose = () => {
-    audio.play();
-    setIsPlaying(!isPlaying);
+    // audio.play();
+    // setIsPlaying(!isPlaying);
     setShowAd(false);
   };
 
