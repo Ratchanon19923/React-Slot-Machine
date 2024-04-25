@@ -68,7 +68,7 @@ h1 span {
 
 .spinner-container {
     overflow: hidden;
-    width: 340px;
+    width: 350px;
     display: flex;
     transition: 0.3s transform;
     background-image: url(/src/images/box-bg.png);
