@@ -81,28 +81,6 @@ h1 span {
 
 }
 
-@keyframes blink {
-    0% {
-        background-color: #fff;
-        /* สีพื้นหลังปกติ */
-    }
-
-    50% {
-        background-color: #ffff00;
-        /* สีพื้นหลังกระพริบ */
-    }
-
-    100% {
-        background-color: #fff;
-    }
-}
-
-.blink {
-    animation: blink 1s infinite;
-    /* กำหนดการกระพริบ */
-}
-
-
 
 .app-wrap.winner-false {
     animation: linear 1s spin;
@@ -122,17 +100,19 @@ h1 span {
 
 @keyframes flicker {
     0% {
-      opacity: 1;
+        opacity: 1;
     }
+
     50% {
-      opacity: 0.5;
+        opacity: 0.5;
     }
+
     100% {
-      opacity: 1;
+        opacity: 1;
     }
-  }
-  
-  .winner {
+}
+
+.winner {
     position: absolute;
     content: '';
     width: 350px;
@@ -143,7 +123,8 @@ h1 span {
     border: 10px solid #6DFF96;
     transform: translate(25px, 110px);
     animation: flicker 0.5s infinite;
-  }
+}
+
 .gradient-fade {
     position: absolute;
     top: 32px;
