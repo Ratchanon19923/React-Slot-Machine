@@ -12,9 +12,7 @@
     display: flex;
     justify-content: center;
     column-gap: 3px;
-
-
-
+    margin-left: 1px;
 
     .reel {
         width: 100px !important;
@@ -23,7 +21,7 @@
         background-size: 100%;
         background-repeat: repeat-y;
         background-position: 0 0;
-        border-radius: 10px;
+        border-radius: 5px;
     }
 }
 
@@ -131,7 +129,7 @@ span.bonus-text {
     background-size: 100% 100%;
     background-position: center;
     width: 404px;
-    height: 186px;
+    height: 176px;
     margin-top: -1rem;
 }
 
@@ -179,7 +177,7 @@ span.bonus-text {
     background-size: 100% 100%;
     background-position: center;
     width: 382px;
-    height: 160px;
+    height: 162px;
     padding: 6rem 1rem 1rem 12rem;
 }
 
@@ -187,8 +185,8 @@ span.bonus-text {
     background-image: url(../src/images/bnt-spin.png);
     background-size: 100% 100%;
     background-position: center;
-    width: 220px;
-    height: 150px;
+    width: 210px;
+    height: 145px;
     cursor: pointer;
     margin: auto;
 
@@ -198,8 +196,8 @@ span.bonus-text {
     background-image: url(../src/images/bnt-spin1.png);
     background-size: 100% 100%;
     background-position: center;
-    width: 220px;
-    height: 150px;
+    width: 210px;
+    height: 145px;
     cursor: pointer;
     margin: auto;
 

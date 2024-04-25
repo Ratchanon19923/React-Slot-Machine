@@ -95,7 +95,7 @@ h1 span {
     justify-content: center;
     align-items: center;
     padding: 1.5rem;
-    margin: -1rem auto;
+    margin: 0.5rem auto -1rem;
 
 }
 
