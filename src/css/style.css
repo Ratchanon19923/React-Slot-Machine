@@ -7,17 +7,17 @@
 
 
 .slots {
-    width: 350px !important;
-    height: 330px !important;
+    width: 300px !important;
+    height: 300px !important;
     display: flex;
-    justify-content: space-between;
-    margin-left: 15px;
+    justify-content: center;
+    column-gap: 3px;
 
 
     .reel {
         width: 110px !important;
-        height: 330px !important;
-        background-image: url(../assets/gamespin.png);
+        height: 300px !important;
+        background-image: url(/src/assets/gamespin.png);
         background-size: 100%;
         background-repeat: repeat-y;
         background-position: 0 0;
@@ -128,6 +128,7 @@ span.bonus-text {
     display: grid;
     justify-content: center;
     align-items: end;
+    margin-top: 1rem;
 }
 
 .logo-head {
@@ -275,13 +276,7 @@ span.bonus-text {
         height: 100vh;
     }
 
-    .bnt-game {
-        transform: translate(-50%, -110%);
-    }
 
-    .bnt-game:hover {
-        transform: translate(-50%, -110%);
-    }
 
     .group-logo-head {
         display: flex;
@@ -314,7 +309,7 @@ span.bonus-text {
     }
 }
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 390px) {
 
     .session-box,
     .background-Loading,
@@ -323,13 +318,6 @@ span.bonus-text {
         width: 100%;
     }
 
-    .bnt-game {
-        transform: translate(-50%, -60%);
-    }
-
-    .bnt-game:hover {
-        transform: translate(-50%, -60%);
-    }
 
     .logo-head {
         width: 331px;
@@ -354,4 +342,13 @@ span.bonus-text {
         height: 90px;
         margin-top: -1rem;
     }
+    .bnt-game, .bnt-game:hover {
+        width: 172px;
+        height: 74px;
+        margin-bottom: 3.5rem;
+    }
+    .group-bnt {
+        margin-top: 2rem;
+    }
+
 }
