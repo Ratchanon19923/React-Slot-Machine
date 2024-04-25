@@ -7,7 +7,7 @@
 
 
 .slots {
-    width: 310px !important;
+    width: 320px !important;
     height: 300px !important;
     display: flex;
     justify-content: center;
@@ -15,7 +15,7 @@
 
 
     .reel {
-        width: 110px !important;
+        width: 100px !important;
         height: 300px !important;
         background-image: url(/src/assets/gamespin.png);
         background-size: 100%;

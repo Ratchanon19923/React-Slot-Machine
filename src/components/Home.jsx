@@ -9,7 +9,7 @@ function Home() {
   const [score, setScore] = useState(0);
 
   // const iconMap = ["banana", "seven", "cherry", "plum", "orange", "bell", "bar", "lemon", "melon"];
-  const icon_width = 300;
+  const icon_width = 315;
   const icon_height = 100;
   const num_icons = 9;
   const indexes = [0, 0, 0];
@@ -64,23 +64,23 @@ function Home() {
         deltas.forEach((delta, i) => indexes[i] = (indexes[i] + delta) % num_icons);
         console.log("indexes", indexes);
         // indexes.map((index) => console.log(iconMap[index]));
-        // if (score < 300) {
-        //   if (indexes[0] == indexes[1] || indexes[1] == indexes[2]) {
-        //     const winCls = indexes[0] == indexes[2] ? "win2" : "win1";
-        //     console.log(winCls);
-        //     if (winCls === "win1") {
-        //       setScore(score + 100)
-        //     }
-        //     else if (winCls === "win2") {
-        //       setScore(score + 50)
-        //     }
-        //   }
-        //   // Again!
-        //   // setTimeout(rollAll, 100);
-        // }
-        // else {
-        //   alert("win")
-        // }
+        if (score < 300) {
+          if (indexes[0] == indexes[1] || indexes[1] == indexes[2]) {
+            const winCls = indexes[0] == indexes[2] ? "win2" : "win1";
+            console.log(winCls);
+            if (winCls === "win1") {
+              setScore(score + 100)
+            }
+            else if (winCls === "win2") {
+              setScore(score + 50)
+            }
+          }
+          // Again!
+          // setTimeout(rollAll, 100);
+        }
+        else {
+          alert("win")
+        }
 
       });
   };
