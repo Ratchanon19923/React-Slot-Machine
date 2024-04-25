@@ -9,6 +9,8 @@ function Home() {
   const [showAd, setShowAd] = useState(false); // เริ่มต้นโชว์โฆษณาเป็น false
   const [score, setScore] = useState(0);
   const [round, setRound] = useState(0);
+  const [audio] = useState(new Audio("../src/music/game.mp3"));
+  const [isPlaying, setIsPlaying] = useState(false);
   // const iconMap = ["banana", "seven", "cherry", "plum", "orange", "bell", "bar", "lemon", "melon"];
   const icon_width = 315;
   const icon_height = 100;
@@ -87,6 +89,15 @@ function Home() {
     setIsModalOpen(false);
     document.getElementById("winner").classList.remove("winner");
   };
+  const toggleAudio = () => {
+    if (isPlaying) {
+      audio.pause();
+      audio.currentTime = 0;
+    } else {
+      audio.play();
+    }
+    setIsPlaying(!isPlaying);
+  };
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -95,7 +106,7 @@ function Home() {
       } else {
         clearInterval(timer);
         setIsLoading(false);
-        setShowAd(true); // เมื่อโหลดเสร็จแล้วแสดงโฆษณา
+        setShowAd(true);
       }
     }, 20);
     return () => clearInterval(timer);
@@ -125,7 +136,7 @@ function Home() {
           <div className="session-group-">
             <div className="icon-group-modal-">
               <div className="icon-home-modal"></div>
-              <div className="icon-music-modal"></div>
+              <div className="icon-music-modal" onClick={toggleAudio}></div>
             </div>
             <div onClick={handleAdClose} className="bnt-game"></div>
           </div>
@@ -153,7 +164,7 @@ function Home() {
 
       <div className="background-Home">
         <div className="icon-head">
-          <div className="icon-music"></div>
+          <div className="icon-music" onClick={toggleAudio}></div>
           <div className="icon-close"></div>
         </div>
         <div className="group-logo-head">
