@@ -109,17 +109,41 @@ h1 span {
 }
 
 /* .spinner-container::after {
-  position: absolute;
-  content: '';
-  display: block;
-  height: 180px;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 30px;
-  left: 30px;
-  background: rgba(255, 0, 0, .1);
+    position: absolute;
+    content: '';
+    width: 320px;
+    height: 90px;
+    background-size: 100% 100%;
+    background-position: center;
+    padding: 0.5rem;
+    border: 10px solid #6DFF96;
+    
 } */
 
+@keyframes flicker {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .winner {
+    position: absolute;
+    content: '';
+    width: 350px;
+    height: 90px;
+    background-size: 100% 100%;
+    background-position: center;
+    padding: 0.5rem;
+    border: 10px solid #6DFF96;
+    transform: translate(25px, 110px);
+    animation: flicker 0.5s infinite;
+  }
 .gradient-fade {
     position: absolute;
     top: 32px;

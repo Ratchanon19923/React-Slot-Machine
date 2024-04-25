@@ -17,23 +17,24 @@ function Home() {
 
   const reelsRef = useRef([]);
 
-
   const roll = (reel, offset = 0) => {
-    const delta = (offset + 2) * num_icons + Math.round(Math.random() * num_icons);
+    const delta =
+      (offset + 2) * num_icons + Math.round(Math.random() * num_icons);
     console.log(delta);
     if (reel) {
-
       const style = getComputedStyle(reel);
       // Current background position
-      const backgroundPositionY = parseFloat(style['background-position-y']);
+      const backgroundPositionY = parseFloat(style["background-position-y"]);
       // Target background position
-      const targetBackgroundPositionY = backgroundPositionY + delta * icon_height;
+      const targetBackgroundPositionY =
+        backgroundPositionY + delta * icon_height;
       // Normalized background position, for reset
-      const normTargetBackgroundPositionY = targetBackgroundPositionY % (num_icons * icon_height);
+      const normTargetBackgroundPositionY =
+        targetBackgroundPositionY % (num_icons * icon_height);
 
       return new Promise((resolve, reject) => {
-
-        reel.style.transition = `background-position-y ${8 + delta * time_per_icon}ms cubic-bezier(.41,-0.01,.63,1.09)`;
+        reel.style.transition = `background-position-y ${8 + delta * time_per_icon
+          }ms cubic-bezier(.41,-0.01,.63,1.09)`;
         // Set background position
         reel.style.backgroundPositionY = `${targetBackgroundPositionY}px`;
         // After animation
@@ -45,11 +46,9 @@ function Home() {
           // Resolve this promise
           resolve(delta % num_icons);
         }, 8 + delta * time_per_icon);
-      })
-
+      });
     }
-  }
-
+  };
 
   const rollAll = () => {
     const reelsList = reelsRef.current;
@@ -61,12 +60,15 @@ function Home() {
       // When all reels done animating (all promises solve)
       .then((deltas) => {
         // add up indexes
-        deltas.forEach((delta, i) => indexes[i] = (indexes[i] + delta) % num_icons);
+        deltas.forEach(
+          (delta, i) => (indexes[i] = (indexes[i] + delta) % num_icons)
+        );
         console.log("indexes", indexes);
-
+        // indexes.map((index) => console.log(iconMap[index]));
         if (score < 300) {
-          if (indexes[0] == indexes[1] || indexes[1] == indexes[2]) {
-            setScore(score + 30);
+          if (indexes[0] == indexes[1] && indexes[1] == indexes[2]) {
+            setScore(score + 300);
+            document.getElementById("winner").classList.add("winner");
             return;
           }
           // Again!
@@ -94,10 +96,6 @@ function Home() {
       // rollAll(); // เมื่อโหลดเสร็จแล้วและไม่แสดงโฆษณา ให้เริ่มเกมส์
     }
   }, [isLoading, showAd]);
-
-
-
-
 
   const handleAdClose = () => {
     setShowAd(false);
@@ -136,11 +134,21 @@ function Home() {
         <div className="group-logo-head">
           <div className="logo-head"></div>
         </div>
+        <div id="winner"></div>
         <div className="spinner-container">
           <div className="slots">
-            <div className="reel" ref={(el) => (reelsRef.current[0] = el)}></div>
-            <div className="reel" ref={(el) => (reelsRef.current[1] = el)}></div>
-            <div className="reel" ref={(el) => (reelsRef.current[2] = el)}></div>
+            <div
+              className="reel"
+              ref={(el) => (reelsRef.current[0] = el)}
+            ></div>
+            <div
+              className="reel"
+              ref={(el) => (reelsRef.current[1] = el)}
+            ></div>
+            <div
+              className="reel"
+              ref={(el) => (reelsRef.current[2] = el)}
+            ></div>
           </div>
         </div>
         <div className="group-bnt">
