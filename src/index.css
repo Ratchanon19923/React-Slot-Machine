@@ -67,18 +67,16 @@ h1 span {
 
 .spinner-container {
     overflow: hidden;
-    width: 100%;
-    display: grid;
+    width: 340px;
+    display: flex;
     transition: 0.3s transform;
     background-image: url(/src/images/box-bg.png);
     background-size: 100% 100%;
     background-position: center;
     justify-content: center;
     align-items: center;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 5px;
-    padding: 1.3rem;
-    margin-top: -1rem;
+    padding: 1.5rem;
+    margin: -1rem auto;
 }
 
 .app-wrap.winner-false {
@@ -155,24 +153,15 @@ body {
     color: #fff;
 }
 
-@media screen and (max-width: 500px) {
+/* @media screen and (max-width: 500px) {
     .icons {
         height: 320px;
     }
 
-    .spinner-container {
-        padding: 1.5rem;
-        margin-top: -1.5rem;
-    }
 }
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 390px) {
     .icons {
         height: 240px;
     }
-
-    .spinner-container {
-        padding: 1.5rem;
-        margin-top: -1.5rem;
-    }
-}
+} */
