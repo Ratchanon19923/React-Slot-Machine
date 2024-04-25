@@ -11,9 +11,14 @@ body {
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* Use filter to add blur effect */
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 100vh;
-    backdrop-filter: blur(7.550000190734863px);
+    height: 100%;
+    backdrop-filter: blur(6px);
 }
 
 #repeatButton {
