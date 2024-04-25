@@ -7,7 +7,7 @@ function Home() {
   const [progress, setProgress] = useState(0);
   const [showAd, setShowAd] = useState(false); // เริ่มต้นโชว์โฆษณาเป็น false
   const [score, setScore] = useState(0);
-
+  const [round, setRound] = useState(0);
   // const iconMap = ["banana", "seven", "cherry", "plum", "orange", "bell", "bar", "lemon", "melon"];
   const icon_width = 315;
   const icon_height = 100;
@@ -54,6 +54,8 @@ function Home() {
   const rollAll = () => {
     const reelsList = reelsRef.current;
 
+    setRound(round + 1)
+
     Promise
       // Activate each reel, must convert NodeList to Array for this with spread operator
       .all(reelsList.map((reel, i) => roll(reel, i)))
@@ -65,21 +67,13 @@ function Home() {
         console.log("indexes", indexes);
         // indexes.map((index) => console.log(iconMap[index]));
         if (score < 300) {
-          if (indexes[0] == indexes[1] || indexes[1] == indexes[2]) {
-            const winCls = indexes[0] == indexes[2] ? "win2" : "win1";
-            console.log(winCls);
-            if (winCls === "win1") {
-              setScore(score + 100)
-            }
-            else if (winCls === "win2") {
-              setScore(score + 50)
-            }
+
+          if (indexes[0] == indexes[1] && indexes[1] == indexes[2]) {
+            setScore(score + 300)
+            alert("win")
           }
           // Again!
-          // setTimeout(rollAll, 100);
-        }
-        else {
-          alert("win")
+          setTimeout(rollAll, 100);
         }
 
       });
@@ -154,7 +148,7 @@ function Home() {
         </div>
         <div className="group-bnt">
           <div className="bg-bonus">
-            <span className="bonus-text">{score} ฿</span>
+            <span className="bonus-text">{round} ฿</span>
           </div>
           <div
             aria-label="Play again."
