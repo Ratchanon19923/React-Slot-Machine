@@ -10,7 +10,7 @@ function Home() {
 
   // const iconMap = ["banana", "seven", "cherry", "plum", "orange", "bell", "bar", "lemon", "melon"];
   const icon_width = 350;
-  const icon_height = 330;
+  const icon_height = 110;
   const num_icons = 9;
   const indexes = [0, 0, 0];
   const time_per_icon = 100;
