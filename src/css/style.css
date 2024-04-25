@@ -28,16 +28,6 @@
 }
 
 
-
-@font-face {
-    font-family: 'Inter';
-    src: url('../fonts/Inter.ttf') format('Inter')
-}
-
-body {
-    font-family: 'Inter'
-}
-
 .logo {
     height: 6em;
     padding: 1.5em;
@@ -143,7 +133,6 @@ span.bonus-text {
     width: 404px;
     height: 186px;
     margin-top: -1rem;
-    margin-bottom: 1rem;
 }
 
 .icon-group-modal {
@@ -333,7 +322,7 @@ span.text-pop1 {
 
 span.text-pop2 {
     color: #F90;
-    -webkit-text-stroke: 2px #FFF;
+    -webkit-text-stroke: 3px #FFF;
     text-shadow: 5.132px 5.132px 5.132px rgba(0, 0, 0, 0.50);
     text-align: center;
     font-size: 52.592px;

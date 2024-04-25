@@ -9,7 +9,7 @@ function Home() {
   const [showAd, setShowAd] = useState(false); // เริ่มต้นโชว์โฆษณาเป็น false
   const [score, setScore] = useState(0);
   const [round, setRound] = useState(0);
-  const [audio] = useState(new Audio("../src/music/game.mp3"));
+  const [audio] = useState(new Audio("../src/music/gaming-intro.mp3"));
   const [isPlaying, setIsPlaying] = useState(false);
   // const iconMap = ["banana", "seven", "cherry", "plum", "orange", "bell", "bar", "lemon", "melon"];
   const icon_width = 315;

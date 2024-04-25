@@ -1,4 +1,17 @@
-@import url('https://fonts.googleapis.com/css?family=Cairo');
+@font-face {
+    font-family: 'Inter';
+    src: url('./fonts/Inter.ttf') format('Inter');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #f4f4f4;
+}
 
 @keyframes spin {
     to {
@@ -155,15 +168,6 @@ h1 span {
   }
 } */
 
-body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-        sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background-color: #f4f4f4;
-}
 
 .App {
     text-align: center;
