@@ -89,6 +89,7 @@ function Home() {
     setIsModalOpen(false);
     document.getElementById("winner").classList.remove("winner");
   };
+
   const toggleAudio = () => {
     if (isPlaying) {
       audio.pause();
@@ -119,6 +120,8 @@ function Home() {
   }, [isLoading, showAd]);
 
   const handleAdClose = () => {
+    audio.play();
+    setIsPlaying(!isPlaying);
     setShowAd(false);
   };
 
