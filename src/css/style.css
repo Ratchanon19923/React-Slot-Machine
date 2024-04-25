@@ -131,6 +131,7 @@ span.bonus-text {
     background-position: center;
     background-repeat: no-repeat;
     height: 175px;
+    padding: 0 1rem;
 }
 
 .icon-group-modal {
@@ -177,9 +178,9 @@ span.bonus-text {
     background-image: url("../src/images/bg-bonus.png");
     background-size: 100% 100%;
     background-position: center;
-    width: 362px;
+    width: 386px;
     height: 140px;
-    padding: 5rem 1rem 1rem 12rem;
+    padding: 5rem 1rem 1rem 13rem;
     margin-bottom: 1rem;
 }
 
