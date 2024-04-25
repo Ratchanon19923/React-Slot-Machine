@@ -154,10 +154,7 @@ function Home() {
 
       <div className="background-Home">
         <div className="icon-head">
-          <div
-            className="icon-music"
-            onClick={() => setIsModalOpen(true)}
-          ></div>
+          <div className="icon-music"></div>
           <div className="icon-close"></div>
         </div>
         <div className="group-logo-head">
