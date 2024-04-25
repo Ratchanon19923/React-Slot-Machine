@@ -34,9 +34,8 @@ function Home() {
         targetBackgroundPositionY % (num_icons * icon_height);
 
       return new Promise((resolve, reject) => {
-        reel.style.transition = `background-position-y ${
-          8 + delta * time_per_icon
-        }ms cubic-bezier(.41,-0.01,.63,1.09)`;
+        reel.style.transition = `background-position-y ${8 + delta * time_per_icon
+          }ms cubic-bezier(.41,-0.01,.63,1.09)`;
         // Set background position
         reel.style.backgroundPositionY = `${targetBackgroundPositionY}px`;
         // After animation
@@ -145,8 +144,8 @@ function Home() {
               <div className="close" onClick={closeModalAndRemoveClass}></div>
             </div>
             <div className="group-text-popup">
-              <span className="text-pop1">จำนวนสปิน</span>
-              <span className="text-pop2">฿</span>
+              <span className="text-pop1">จำนวน {round} สปิน</span>
+              <span className="text-pop2">{score}฿</span>
             </div>
           </div>
         </div>
