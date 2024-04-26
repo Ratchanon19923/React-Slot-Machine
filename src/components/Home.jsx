@@ -17,6 +17,7 @@ function Home() {
   const num_icons = 9;
   const indexes = [0, 0, 0];
   const time_per_icon = 100;
+  const point = [10, 20, 30, 40, 50];
 
   const reelsRef = useRef([]);
 
@@ -65,6 +66,10 @@ function Home() {
         );
         console.log("indexes", indexes);
         if (score < 300) {
+          // if (indexes[0] == indexes[1] || indexes[1] == indexes[2]) {
+          //   const randomIndex = Math.floor(Math.random() * point.length);
+          //   setScore((current) => current + score + point[randomIndex]);
+          // }
           if (indexes[0] == indexes[1] && indexes[1] == indexes[2]) {
             setScore(score + 300);
             document.getElementById("winner").classList.add("winner");

@@ -18,7 +18,7 @@
         background-image: url(../src/images/gamespin.png);
         background-size: 100%;
         background-repeat: repeat-y;
-        background-position: 0 0;
+        background-position: 0 0px;
         border-radius: 5px;
     }
 }
