@@ -17,7 +17,6 @@ function Home() {
   const num_icons = 9;
   const indexes = [0, 0, 0];
   const time_per_icon = 100;
-  const point = [10, 20, 30, 40, 50];
 
   const reelsRef = useRef([]);
 
@@ -65,27 +64,23 @@ function Home() {
           (delta, i) => (indexes[i] = (indexes[i] + delta) % num_icons)
         );
         console.log("indexes", indexes);
-
-        // if (indexes[0] == indexes[1] || indexes[1] == indexes[2]) {
-        //   const randomIndex = Math.floor(Math.random() * point.length);
-        //   setScore((current) => current + score + point[randomIndex]);
-        // }
-        if (indexes[0] == indexes[1] && indexes[1] == indexes[2]) {
-          setScore(score + 300);
-          document.getElementById("winner").classList.add("winner");
-          setTimeout(() => {
+        if (score < 300) {
+          if (indexes[0] == indexes[1] && indexes[1] == indexes[2]) {
             setScore(score + 300);
-            setIsModalOpen(true);
-          }, 1000);
-          console.log("Modal open event triggered!");
-          return;
+            document.getElementById("winner").classList.add("winner");
+            setTimeout(() => {
+              setScore(score + 300);
+              setIsModalOpen(true);
+            }, 1000);
+            console.log("Modal open event triggered!");
+            return;
+          }
+          // Again!
+          setTimeout(() => {
+            setRound((current) => current + 1);
+            rollAll();
+          }, 100);
         }
-        // Again!
-        setTimeout(() => {
-          setRound((current) => current + 1);
-          rollAll();
-        }, 100);
-
       });
   };
 
@@ -201,8 +196,7 @@ function Home() {
           </div>
           <div
             aria-label="Play again."
-            onClick={rollAll}
-            disabled={score >= 300}
+            onClick={round > 0 ? null : rollAll}
             className="bt-spin"
           ></div>
         </div>
