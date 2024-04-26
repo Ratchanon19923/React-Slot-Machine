@@ -35,8 +35,9 @@ function Home() {
         targetBackgroundPositionY % (num_icons * icon_height);
 
       return new Promise((resolve, reject) => {
-        reel.style.transition = `background-position-y ${8 + delta * time_per_icon
-          }ms cubic-bezier(.41,-0.01,.63,1.09)`;
+        reel.style.transition = `background-position-y ${
+          8 + delta * time_per_icon
+        }ms cubic-bezier(.41,-0.01,.63,1.09)`;
         // Set background position
         reel.style.backgroundPositionY = `${targetBackgroundPositionY}px`;
         // After animation
