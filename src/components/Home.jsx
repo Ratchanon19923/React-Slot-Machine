@@ -173,8 +173,9 @@ function Home() {
         <div className="group-logo-head">
           <div className="logo-head"></div>
         </div>
-        <div id="winner"></div>
+
         <div className="spinner-container">
+          <div id="winner"></div>
           <div className="slots">
             <div
               className="reel"
