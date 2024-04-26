@@ -36,9 +36,8 @@ function Home() {
         targetBackgroundPositionY % (num_icons * icon_height);
 
       return new Promise((resolve, reject) => {
-        reel.style.transition = `background-position-y ${
-          8 + delta * time_per_icon
-        }ms cubic-bezier(.41,-0.01,.63,1.09)`;
+        reel.style.transition = `background-position-y ${8 + delta * time_per_icon
+          }ms cubic-bezier(.41,-0.01,.63,1.09)`;
         // Set background position
         reel.style.backgroundPositionY = `${targetBackgroundPositionY}px`;
         // After animation
@@ -71,7 +70,7 @@ function Home() {
           //   const randomIndex = Math.floor(Math.random() * point.length);
           //   setScore((current) => current + score + point[randomIndex]);
           // }
-          if (indexes[0] == indexes[1] && indexes[1] == indexes[2]) {
+          if (indexes[0] == indexes[1] || indexes[1] == indexes[2]) {
             setScore(score + 300);
             document.getElementById("winner").classList.add("winner");
             setTimeout(() => {
