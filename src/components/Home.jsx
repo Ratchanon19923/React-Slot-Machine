@@ -65,27 +65,27 @@ function Home() {
           (delta, i) => (indexes[i] = (indexes[i] + delta) % num_icons)
         );
         console.log("indexes", indexes);
-        if (score < 300) {
-          // if (indexes[0] == indexes[1] || indexes[1] == indexes[2]) {
-          //   const randomIndex = Math.floor(Math.random() * point.length);
-          //   setScore((current) => current + score + point[randomIndex]);
-          // }
-          if (indexes[0] == indexes[1] || indexes[1] == indexes[2]) {
-            setScore(score + 300);
-            document.getElementById("winner").classList.add("winner");
-            setTimeout(() => {
-              setScore(score + 300);
-              setIsModalOpen(true);
-            }, 1000);
-            console.log("Modal open event triggered!");
-            return;
-          }
-          // Again!
+
+        // if (indexes[0] == indexes[1] || indexes[1] == indexes[2]) {
+        //   const randomIndex = Math.floor(Math.random() * point.length);
+        //   setScore((current) => current + score + point[randomIndex]);
+        // }
+        if (indexes[0] == indexes[1] && indexes[1] == indexes[2]) {
+          setScore(score + 300);
+          document.getElementById("winner").classList.add("winner");
           setTimeout(() => {
-            setRound((current) => current + 1);
-            rollAll();
-          }, 100);
+            setScore(score + 300);
+            setIsModalOpen(true);
+          }, 1000);
+          console.log("Modal open event triggered!");
+          return;
         }
+        // Again!
+        setTimeout(() => {
+          setRound((current) => current + 1);
+          rollAll();
+        }, 100);
+
       });
   };
 
