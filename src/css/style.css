@@ -311,7 +311,7 @@ span.bonus-text {
 span.text-pop1 {
     color: #00B359;
     text-align: center;
-    -webkit-text-stroke: 2px #FFF;
+    -webkit-text-stroke: 1px #FFF;
     text-shadow: 5.132px 5.132px 5.132px rgba(0, 0, 0, 0.50);
     -webkit-text-stroke-color: #fff;
     font-family: Inter;
