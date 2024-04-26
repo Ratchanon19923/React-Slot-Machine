@@ -111,7 +111,6 @@ span.bonus-text {
     background-image: url("../src/images/bg6.png");
     background-size: 100% 100%;
     background-position: center;
-    background-attachment: fixed;
     width: 430px;
     height: 100vh;
     padding: 1rem 0rem;
