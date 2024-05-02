@@ -24,9 +24,10 @@ function Home() {
   const roll = (reel, offset = 0) => {
     // const delta =(offset + 2) * num_icons + Math.round(Math.random() * num_icons);
     const math = Math.random();
-    const numindexes = [0.1, 0.2, 0.3];
 
-    const num = score < 200 ? 0.1 : math;
+    console.log(score);
+    const num = score <= 200 ? 0.1 : math;
+
     console.log(num);
     const delta = (offset + 2) * num_icons + Math.round(num * num_icons);
 
@@ -190,15 +191,15 @@ function Home() {
           <div id="winner"></div>
           <div className="slots">
             <div
-              className="reel"
+              className="reel1"
               ref={(el) => (reelsRef.current[0] = el)}
             ></div>
             <div
-              className="reel"
+              className="reel2"
               ref={(el) => (reelsRef.current[1] = el)}
             ></div>
             <div
-              className="reel"
+              className="reel3"
               ref={(el) => (reelsRef.current[2] = el)}
             ></div>
           </div>

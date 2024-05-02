@@ -12,13 +12,33 @@
     column-gap: 3px;
     margin-left: 1px;
 
-    .reel {
+    .reel1 {
+        width: 100px !important;
+        height: 300px !important;
+        background-image: url(../src/images/gamespin.png);
+        background-size: 100%;
+        background-repeat: repeat-y;
+        background-position: 0 200px;
+        border-radius: 5px;
+    }
+
+    .reel2 {
         width: 100px !important;
         height: 300px !important;
         background-image: url(../src/images/gamespin.png);
         background-size: 100%;
         background-repeat: repeat-y;
         background-position: 0 0px;
+        border-radius: 5px;
+    }
+
+    .reel3 {
+        width: 100px !important;
+        height: 300px !important;
+        background-image: url(../src/images/gamespin.png);
+        background-size: 100%;
+        background-repeat: repeat-y;
+        background-position: 0 600px;
         border-radius: 5px;
     }
 }
