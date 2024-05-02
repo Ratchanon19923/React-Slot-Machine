@@ -21,12 +21,16 @@ function Home() {
   const reelsRef = useRef([]);
 
   const roll = (reel, offset = 0) => {
-    const delta =
-      (offset + 2) * num_icons + Math.round(Math.random() * num_icons);
+    // const delta =(offset + 2) * num_icons + Math.round(Math.random() * num_icons);
+    const math = Math.random();
+    const num = score < 200 ? 0.1 : math;
+    console.log(num);
+    const delta = (offset + 2) * num_icons + Math.round(num * num_icons);
+
     if (reel) {
       const style = getComputedStyle(reel);
       // Current background position
-      const backgroundPositionY = parseFloat(style["background-position-y"]);
+      const backgroundPositionY = parseFloat(0);
       // Target background position
       const targetBackgroundPositionY =
         backgroundPositionY + delta * icon_height;
@@ -52,35 +56,41 @@ function Home() {
     }
   };
 
-  const rollAll = () => {
+  const rollAll = async (_round) => {
     const reelsList = reelsRef.current;
-    Promise
+    const __round = Number(_round ? _round : round);
+
+    await Promise
       // Activate each reel, must convert NodeList to Array for this with spread operator
       .all(reelsList.map((reel, i) => roll(reel, i)))
       // When all reels done animating (all promises solve)
-      .then((deltas) => {
+      .then(async (deltas) => {
         // add up indexes
         deltas.forEach(
           (delta, i) => (indexes[i] = (indexes[i] + delta) % num_icons)
         );
         console.log("indexes", indexes);
-        if (score < 300) {
-          if (indexes[0] == indexes[1] && indexes[1] == indexes[2]) {
-            setScore(score + 300);
-            document.getElementById("winner").classList.add("winner");
-            setTimeout(() => {
-              setScore(score + 300);
-              setIsModalOpen(true);
-            }, 1000);
+
+        await new Promise(resolve => {
+          setTimeout(() => {
+            setRound(__round + 1);
+            resolve();
+          }, 200);
+        });
+
+        if (indexes[0] == indexes[1] && indexes[1] == indexes[2]) {
+          setScore(score => score + 50);
+          // document.getElementById("winner").classList.add("winner");
+
+          if (__round + 1 == 3) {
+            // setTimeout(() => {
+            // setIsModalOpen(true);
+            // }, 1000);
             console.log("Modal open event triggered!");
             return;
           }
-          // Again!
-          setTimeout(() => {
-            setRound((current) => current + 1);
-            rollAll();
-          }, 100);
         }
+        await rollAll(__round + 1);
       });
   };
 
@@ -196,7 +206,7 @@ function Home() {
           </div>
           <div
             aria-label="Play again."
-            onClick={round > 0 ? null : rollAll}
+            onClick={() => rollAll()}
             className="bt-spin"
           ></div>
         </div>
