@@ -18,7 +18,6 @@ function Home() {
   const indexes = [0, 0, 0];
   const time_per_icon = 100;
 
-
   const reelsRef = useRef([]);
 
   const roll = (reel, offset = 0) => {
@@ -43,8 +42,9 @@ function Home() {
         targetBackgroundPositionY % (num_icons * icon_height);
 
       return new Promise((resolve, reject) => {
-        reel.style.transition = `background-position-y ${8 + delta * time_per_icon
-          }ms cubic-bezier(.41,-0.01,.63,1.09)`;
+        reel.style.transition = `background-position-y ${
+          8 + delta * time_per_icon
+        }ms cubic-bezier(.41,-0.01,.63,1.09)`;
         // Set background position
         reel.style.backgroundPositionY = `${targetBackgroundPositionY}px`;
         // After animation
@@ -75,7 +75,7 @@ function Home() {
         );
         console.log("indexes", indexes);
 
-        await new Promise(resolve => {
+        await new Promise((resolve) => {
           setTimeout(() => {
             setRound(__round + 1);
             resolve();
@@ -83,7 +83,7 @@ function Home() {
         });
 
         if (indexes[0] == indexes[1] && indexes[1] == indexes[2]) {
-          setScore(score => score + 50);
+          setScore((score) => score + 50);
           // document.getElementById("winner").classList.add("winner");
 
           if (__round + 1 == 10) {
