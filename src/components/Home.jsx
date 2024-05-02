@@ -11,18 +11,21 @@ function Home() {
   const [round, setRound] = useState(0);
   const [audio] = useState(new Audio("../src/music/gaming-intro.mp3"));
   const [isPlaying, setIsPlaying] = useState(false);
-  // const iconMap = ["banana", "seven", "cherry", "plum", "orange", "bell", "bar", "lemon", "melon"];
+
   const icon_width = 315;
   const icon_height = 100;
   const num_icons = 9;
   const indexes = [0, 0, 0];
   const time_per_icon = 100;
 
+
   const reelsRef = useRef([]);
 
   const roll = (reel, offset = 0) => {
     // const delta =(offset + 2) * num_icons + Math.round(Math.random() * num_icons);
     const math = Math.random();
+    const numindexes = [0.1, 0.2, 0.3];
+
     const num = score < 200 ? 0.1 : math;
     console.log(num);
     const delta = (offset + 2) * num_icons + Math.round(num * num_icons);
@@ -82,7 +85,7 @@ function Home() {
           setScore(score => score + 50);
           // document.getElementById("winner").classList.add("winner");
 
-          if (__round + 1 == 3) {
+          if (__round + 1 == 10) {
             // setTimeout(() => {
             // setIsModalOpen(true);
             // }, 1000);
